@@ -16,6 +16,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
     }
 }
