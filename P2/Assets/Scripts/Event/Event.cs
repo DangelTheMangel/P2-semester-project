@@ -8,6 +8,16 @@ public class Event : MonoBehaviour
     public bool timedReaction;
     [SerializeField]
     public float reactionTimer;
+
+    private void Start()
+    {
+        GameManganer.Instance.player.enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        GameManganer.Instance.player.enabled = true;
+    }
     // Update is called once per frame
     void Update()
     {

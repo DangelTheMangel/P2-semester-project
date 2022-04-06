@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GameManganer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManganer Instance;
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public PlayerMovement player;
+
+    public void winGame() {
+        Debug.Log("game won ");
     }
 }
