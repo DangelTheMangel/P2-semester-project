@@ -50,13 +50,14 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+            if (playerControls.Freemovement.Move.triggered)
             {
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), collisionCheckerSize, whatStopsMovement))
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, 1f, 0f), collisionCheckerSize, whatStopsMovement))
                 {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    movePoint.position += new Vector3(0f, 1f, 0f);
                 }
             }
+            
         }
         //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
     }

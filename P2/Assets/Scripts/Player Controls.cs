@@ -29,9 +29,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""0d7d721b-6e93-4fa2-9ff2-b4d01fe02ead"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -44,64 +44,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""dbb921f2-3da9-461b-8520-34f080c8063c"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""ac7ed8d1-25f9-48a7-81a2-c9deab1bdd26"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""bcce5312-c005-4611-b1d4-01529aa7e9b1"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""72eb5ae5-ada7-4b64-8901-253c392f3abe"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""8e7d10cd-e579-4a1e-9683-fcb186a37b43"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""aee1323b-3f49-4c3e-8b5e-1254145ee722"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": """",
                     ""id"": ""76f71404-1212-4215-8917-76365dc2ee99"",
@@ -112,6 +66,50 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf489087-9c9d-4265-be0d-f91b3ee3c7cb"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""5cf3b5f6-2c77-4b26-aefb-e2a7e83e5d2c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""f081e5f7-3a81-4415-a66d-9267bb44b188"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1079b885-c031-4113-93cf-7852d9ee8749"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -150,6 +148,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Freemovement = asset.FindActionMap("Free movement", throwIfNotFound: true);
         m_Freemovement_Move = m_Freemovement.FindAction("Move", throwIfNotFound: true);
         m_Freemovement_Interact = m_Freemovement.FindAction("Interact", throwIfNotFound: true);
+        m_Freemovement_Rotate = m_Freemovement.FindAction("Rotate", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Newaction = m_Combat.FindAction("New action", throwIfNotFound: true);
@@ -214,12 +213,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IFreemovementActions m_FreemovementActionsCallbackInterface;
     private readonly InputAction m_Freemovement_Move;
     private readonly InputAction m_Freemovement_Interact;
+    private readonly InputAction m_Freemovement_Rotate;
     public struct FreemovementActions
     {
         private @PlayerControls m_Wrapper;
         public FreemovementActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Freemovement_Move;
         public InputAction @Interact => m_Wrapper.m_Freemovement_Interact;
+        public InputAction @Rotate => m_Wrapper.m_Freemovement_Rotate;
         public InputActionMap Get() { return m_Wrapper.m_Freemovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -235,6 +236,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnInteract;
+                @Rotate.started -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnRotate;
+                @Rotate.performed -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnRotate;
+                @Rotate.canceled -= m_Wrapper.m_FreemovementActionsCallbackInterface.OnRotate;
             }
             m_Wrapper.m_FreemovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -245,6 +249,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
             }
         }
     }
@@ -286,6 +293,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
     }
     public interface ICombatActions
     {
