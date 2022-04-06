@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class ArrowEvent : Event
 {
+    //the start of the event
     public float startReaction;
+    //the start of the players reaction
+    public float startplayerReaction = 3;
+    //the arrow object
     public GameObject arrowObject;
+    //the arrow prefab
     public GameObject arrowprefab;
+    //the name of the arrow point object
     public string arrowpointName;
-
+    //the input system class
     private PlayerControls playerControls;
     private void Start()
     {
+        //the inputsystem class begin intilsiset
         playerControls = new PlayerControls();
+        //Input enabled
         playerControls.Enable();
+
         startReaction = reactionTimer;
         //loop through all the object parent childs and find arrowpoint
         foreach (Transform child in transform.parent)
@@ -35,7 +44,7 @@ public class ArrowEvent : Event
 
     public override bool passedCheck()
     {
-        return (playerControls.Freemovement.Interact.triggered);
+        return (playerControls.Freemovement.Interact.triggered && reactionTimer < startplayerReaction);
     }
 
     public override void faildReaction()

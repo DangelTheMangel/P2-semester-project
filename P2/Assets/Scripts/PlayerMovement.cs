@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform movePoint;
     public Transform playerSprite;
 
+    bool buttonRealse = true;
     private PlayerControls playerControls;
 
     public LayerMask whatStopsMovement;
@@ -49,10 +50,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
-            if (Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) == 1f)
+            //if the button are pressed and the button wasnt pressed last frame rotate
+            if (Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) == 1f && buttonRealse)
             {
                 Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
                 transform.eulerAngles += new Vector3(0, 0, (playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
+                buttonRealse = false;
+            }
+            // if button was not pressed set that the button button wasnt pressed
+            else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
+                buttonRealse = true;
             }
         /*if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
         {
