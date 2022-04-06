@@ -9,7 +9,7 @@ public class Event : MonoBehaviour
     [SerializeField]
     public float reactionTimer;
 
-    private void Start()
+    private void Awake()
     {
         GameManganer.Instance.player.enabled = false;
     }

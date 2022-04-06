@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName:
-  - Test level 1
+  - Test level 2
   changeScene: 0
 --- !u!4 &2013530348
 Transform:
