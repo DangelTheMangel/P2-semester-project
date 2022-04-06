@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
     /// Play a sfx as the audioClip
     /// </summary>
     /// <param name="audioClip"></param>
-    public void playSFX(AudioClip audioClip)
+    public void playEffect(AudioClip audioClip)
     {
         effectSource.PlayOneShot(audioClip);
     }
