@@ -12,8 +12,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    [SerializeField]
-    private AudioSource musicSource, sfxSource;
+    [SerializeField] private AudioSource musicSource, effectSource;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -33,9 +32,9 @@ public class SoundManager : MonoBehaviour
     /// Play a sfx as the audioClip
     /// </summary>
     /// <param name="audioClip"></param>
-    public void playSFX(AudioClip audioClip)
+    public void playEffect(AudioClip audioClip)
     {
-        sfxSource.PlayOneShot(audioClip);
+        effectSource.PlayOneShot(audioClip);
     }
 
     public void changeMasterVolume(float value)
@@ -48,14 +47,14 @@ public class SoundManager : MonoBehaviour
         musicSource.volume = value;
     }
 
-    public void changeSFXVolume(float value)
+    public void changeEffectVolume(float value)
     {
-        sfxSource.volume = value;
+        effectSource.volume = value;
     }
 
-    public void toggleSFX()
+    public void toggleEffect()
     {
-        sfxSource.mute = !sfxSource.mute;
+        effectSource.mute = !effectSource.mute;
     }
 
     public void toggleMusic()
