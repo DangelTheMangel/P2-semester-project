@@ -4,3 +4,5 @@ P2 semester project
 Use Unity version 2020.3.30f1
 
 seeesh
+seesh^2
+
