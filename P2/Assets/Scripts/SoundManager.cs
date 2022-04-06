@@ -12,7 +12,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    [SerializeField] private AudioSource musicSource, effectSource;
+    [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -35,6 +35,11 @@ public class SoundManager : MonoBehaviour
     public void playEffect(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
+    }
+
+    public void playVoice(AudioClip vclip)
+    {
+        voiceSource.PlayOneShot(vclip);
     }
 
     public void changeMasterVolume(float value)
