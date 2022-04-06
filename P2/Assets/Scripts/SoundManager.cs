@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This class controlls all the sound and are inspired by :
+/// https://www.youtube.com/watch?v=tEsuLTpz_DU&ab_channel=Tarodev
+/// https://www.youtube.com/watch?v=DcbxFugk5pM&ab_channel=CodeRadiance
+/// 
+/// Should implement this:
+/// https://www.youtube.com/watch?v=6OT43pvUyfY&ab_channel=Brackeys
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
-
-    [SerializeField] private AudioSource _musicSource, _effectSource;
-
-    private void Awake()
+    public static SoundManager instance;
+    [SerializeField]
+    private AudioSource musicSource, sfxSource;
+    public void Awake()
     {
-        if(Instance == null)
+        //tjekker om der er en instance og hvis der ikke er
+        //gøre denne til instance ellers ødlæg dette gameobject
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -21,9 +29,38 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip)
+    /// <summary>
+    /// Play a sfx as the audioClip
+    /// </summary>
+    /// <param name="audioClip"></param>
+    public void playSFX(AudioClip audioClip)
     {
-        _effectSource.PlayOneShot(clip);
+        sfxSource.PlayOneShot(audioClip);
+    }
+
+    public void changeMasterVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
+
+    public void changeMusicVolume(float value)
+    {
+        musicSource.volume = value;
+    }
+
+    public void changeSFXVolume(float value)
+    {
+        sfxSource.volume = value;
+    }
+
+    public void toggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+
+    public void toggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
     }
 
 }
