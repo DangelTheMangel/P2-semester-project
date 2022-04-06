@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
                 transform.eulerAngles += new Vector3(0, 0, (-playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
-                moveVector = roatationToMovementVector(transform.eulerAngles.z / 360.0f * 2.0f * Mathf.PI);
+                moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
                 buttonRealse = false;
             }
             // if button was not pressed set that the button button wasnt pressed
@@ -82,9 +82,17 @@ public class PlayerMovement : MonoBehaviour
     //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
     }
 
+    /// <summary>
+    /// rotate radiant angle (+ PI/2) and convert to movement 
+    /// vector 
+    /// </summary>
+    /// <param name="r"></param>
+    /// <returns></returns>
     Vector3 roatationToMovementVector(float r) {
-        Debug.Log("r: " + r);
-        return moveVector;
+        //this is done with unit circle
+        Vector3 vector = new Vector3(Mathf.Round(Mathf.Cos(Mathf.PI / 2 + r)),Mathf.Round(Mathf.Sin(Mathf.PI/2 + r)),0);
+
+        return vector;
     }
 
 }
