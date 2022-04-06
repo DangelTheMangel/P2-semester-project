@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapActivator : MonoBehaviour
+public class EventActivator : MonoBehaviour
 {
     [SerializeField]
     GameObject Prefab;
