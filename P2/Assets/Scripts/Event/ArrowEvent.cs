@@ -8,8 +8,12 @@ public class ArrowEvent : Event
     public GameObject arrowObject;
     public GameObject arrowprefab;
     public string arrowpointName;
+
+    private PlayerControls playerControls;
     private void Start()
     {
+        playerControls = new PlayerControls();
+        playerControls.Enable();
         startReaction = reactionTimer;
         //loop through all the object parent childs and find arrowpoint
         foreach (Transform child in transform.parent)
@@ -31,7 +35,7 @@ public class ArrowEvent : Event
 
     public override bool passedCheck()
     {
-        return (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f);
+        return (playerControls.Freemovement.Interact.triggered);
     }
 
     public override void faildReaction()
