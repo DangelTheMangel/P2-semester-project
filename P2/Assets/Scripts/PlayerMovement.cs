@@ -10,7 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float collisionCheckerSize = .2f;
     public Transform movePoint;
 
+    private PlayerControls playerControls;
+
     public LayerMask whatStopsMovement;
+
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
