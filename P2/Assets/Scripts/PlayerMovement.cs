@@ -11,6 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform movePoint;
 
     public LayerMask whatStopsMovement;
+
+    private void Awake()
+    {
+        GameManganer.Instance.player = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
