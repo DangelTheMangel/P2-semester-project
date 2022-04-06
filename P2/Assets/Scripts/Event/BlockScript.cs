@@ -12,14 +12,5 @@ public class BlockScript : MonoBehaviour
         
         //Attack flyver efter dig
         reactionTimer = 3;
-        
     }
-
-
-    private void Update()
-    {
-        
-    } 
-
-
 }
