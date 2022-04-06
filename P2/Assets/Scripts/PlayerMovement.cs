@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         playerControls.Disable();
+        GameManganer.Instance.player = this;
     }
     // Start is called before the first frame update
     void Start()
