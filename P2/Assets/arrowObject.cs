@@ -10,17 +10,14 @@ public class arrowObject : MonoBehaviour
 
     private void Awake()
     {
-        
+        //sets end postion to the players postion
         endPos = GameManganer.Instance.player.transform;
     }
     private void FixedUpdate()
     {
+        //calculate how long the have have reacts
         float arrowTime = 1- (arrowEvent.reactionTimer / arrowEvent.startReaction);
-
-        if (arrowTime < 0.5f)
-        Debug.Log(arrowTime);
-        else
-        Debug.LogWarning(arrowTime);
+        //change the arrows potion bewteen to points
         transform.position = Vector3.Lerp(startPos.position, endPos.position, arrowTime);
     }
 }

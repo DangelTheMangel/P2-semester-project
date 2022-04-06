@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class ArrowEvent : Event
 {
+    //the value of the reaction
     public float startReaction;
+    //the time when the play needs inputs
+    public float inputstartReaction;
+    //the arrows gameobject
     public GameObject arrowObject;
+    //the prefab use for the arrow
     public GameObject arrowprefab;
+    //the name of the  waypoint
     public string arrowpointName;
     private void Start()
     {
@@ -23,17 +29,21 @@ public class ArrowEvent : Event
             }
         }
     }
+    //start the event
     public override void reaction()
     {
         Debug.Log("igang: " + reactionTimer);
         base.reaction();
     }
 
+    //check if you press to move to the site
     public override bool passedCheck()
     {
-        return (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f);
+
+        return (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f && reactionTimer < inputstartReaction);
     }
 
+    //for now destory the object and arrow
     public override void faildReaction()
     {
         Debug.LogWarning("du blev ramt");
@@ -41,6 +51,7 @@ public class ArrowEvent : Event
         Destroy(gameObject);
     }
 
+    //for now destory the object and arrow
     public override void completedReaction()
     {
         Debug.Log("du unvig");
