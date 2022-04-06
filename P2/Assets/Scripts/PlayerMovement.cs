@@ -16,7 +16,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        
+        playerControls = new PlayerControls();
+    }
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+    private void OnDisable()
+    {
+        playerControls.Disable();
     }
     // Start is called before the first frame update
     void Start()
