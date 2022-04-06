@@ -657,11 +657,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458102456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8.634962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -3, z: -10}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 1839967722}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540975835
 GameObject:
@@ -693,7 +693,7 @@ Transform:
   m_Children:
   - {fileID: 339143765}
   m_Father: {fileID: 1839967722}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1540975837
 SpriteRenderer:
@@ -774,7 +774,6 @@ Transform:
   m_LocalPosition: {x: 1, y: -3, z: -1.3650379}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
-  - {fileID: 1458102459}
   - {fileID: 1540975836}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -794,6 +793,7 @@ MonoBehaviour:
   moveSpeed: 10
   collisionCheckerSize: 0.42
   movePoint: {fileID: 339143765}
+  playerSprite: {fileID: 1540975836}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
