@@ -15,8 +15,11 @@ public class PlayerAudioControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spaceCheck(wallCheck(Vector2.up), soundRight);
-        spaceCheck(leftEar, soundLeft);
+         PlayerMovement player = GameManganer.Instance.player;
+         Vector2 rightVector = (Vector2) player.roatationToMovementVector(0);
+         spaceCheck(wallCheck(rightVector), soundRight);
+         spaceCheck(leftEar, soundLeft);
+
     }
 
     void spaceCheck(bool wallCheck, GameObject ear)
