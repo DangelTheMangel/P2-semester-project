@@ -46,7 +46,7 @@ MonoBehaviour:
   timedReaction: 1
   reactionTimer: 5
   startReaction: 0
-  inputstartReaction: 3
+  startplayerReaction: 3
   arrowObject: {fileID: 0}
   arrowprefab: {fileID: 4570922081911716802, guid: 0d21c1b3fa5961e49940ee938c432369, type: 3}
   arrowpointName: ArrowPoint
