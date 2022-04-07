@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 /// <summary>
 /// This class controlls all the sound and are inspired by :
 /// https://www.youtube.com/watch?v=tEsuLTpz_DU&ab_channel=Tarodev
@@ -14,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     [SerializeField] private GameObject preSFX;
+    [SerializeField] private AudioSoundClip[] SoundArray; 
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -38,11 +40,11 @@ public class SoundManager : MonoBehaviour
         effectSource.PlayOneShot(clip);
     }
 
-    public void playEffect(GameObject target, AudioClip clip)
+    public void playEffect(GameObject target, string soundName)
     {
         GameObject obj = Instantiate(preSFX, target.transform.position, target.transform.rotation, target.transform);
 
-        obj.GetComponent<playSFX>()._clip = clip;
+        obj.GetComponent<playSFX>()._clip = findSound(soundName);
     }
 
     public void playVoice(AudioClip vclip)
@@ -55,24 +57,33 @@ public class SoundManager : MonoBehaviour
         AudioListener.volume = value;
     }
 
-    public void changeMusicVolume(float value)
+    public AudioClip findSound(string audioName)
     {
-        musicSource.volume = value;
+        AudioClip selected = null;
+        
+        for(int i = 0; i<SoundArray.Length; ++i)
+        {
+            AudioSoundClip currentI = SoundArray[i];
+            if (audioName == currentI.sound_name)
+            {
+                selected = currentI.audio;
+                break;
+            }
+        }
+
+        if(selected == null)
+        {
+            Debug.LogError("Sound Cringe");
+            return null;
+        }
+        return selected;
     }
 
-    public void changeEffectVolume(float value)
-    {
-        effectSource.volume = value;
-    }
+}
 
-    public void toggleEffect()
-    {
-        effectSource.mute = !effectSource.mute;
-    }
-
-    public void toggleMusic()
-    {
-        musicSource.mute = !musicSource.mute;
-    }
-
+[Serializable]
+public class AudioSoundClip
+{
+    public string sound_name;
+    public AudioClip audio;
 }
