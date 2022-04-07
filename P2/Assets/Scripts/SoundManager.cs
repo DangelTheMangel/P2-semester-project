@@ -76,3 +76,9 @@ public class SoundManager : MonoBehaviour
     }
 
 }
+
+public class AudioSoundClip
+{
+    public string sound_name;
+    public AudioClip audio;
+}
