@@ -31,11 +31,20 @@ public class InputManager : Singleton<InputManager>
     {
         playerControls.Disable();
     }
+    /// <summary>
+    /// Subscribes to input action touch events
+    /// </summary>
     void Start()
     {
         playerControls.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
         playerControls.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);
     }
+
+    /// <summary>
+    /// Input System
+    /// Called when the touch action starts
+    /// </summary>
+    /// <param name="context">Information regarding the event, you can read the value of the touch</param>
     private void StartTouchPrimary(InputAction.CallbackContext context)
     {
         if (OnStartTouch != null) OnStartTouch(Utils.ScreenToWorld(mainCamera, playerControls.Touch.PrimaryPosition.ReadValue<Vector2>()), (float)context.startTime);
