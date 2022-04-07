@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManganer : MonoBehaviour
 {
     public static GameManganer Instance;
     public SceneManganer sceneManganer;
+    public int sceneOfDeath;
 
     private void Awake()
     {
@@ -22,7 +24,22 @@ public class GameManganer : MonoBehaviour
 
     }
 
+    public void Death()
+    {
+        sceneOfDeath = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene("GameOver");
+        Debug.Log("Get Owned Loser");
+    }
+
     public PlayerMovement player;
+
+    private void Update()
+    {
+        if (player == null && sceneOfDeath == SceneManager.GetActiveScene().buildIndex)
+        {
+            player = FindObjectOfType<PlayerMovement>();
+        }
+    }
 
     public void winGame() {
         Debug.Log("game won ");

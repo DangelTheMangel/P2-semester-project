@@ -52,6 +52,7 @@ public class ArrowEvent : Event
         Debug.LogWarning("du blev ramt");
         Destroy(arrowObject);
         Destroy(gameObject);
+        GameManganer.Instance.Death();
     }
 
     public override void completedReaction()

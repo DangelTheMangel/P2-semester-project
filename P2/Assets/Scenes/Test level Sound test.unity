@@ -819,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManganer: {fileID: 2013530347}
+  sceneOfDeath: 0
   player: {fileID: 1839967723}
 --- !u!4 &393195487
 Transform:
@@ -932,7 +933,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 91ec2c033316dd142b1db9209ede32bb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1768,6 +1769,8 @@ MonoBehaviour:
   moveSpeed: 10
   collisionCheckerSize: 0.42
   movePoint: {fileID: 339143765}
+  playerSprite: {fileID: 0}
+  moveVector: {x: 0, y: 1, z: 0}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64

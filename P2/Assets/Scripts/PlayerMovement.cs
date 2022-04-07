@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     /// <param name="r"></param>
     /// <returns></returns>
-    Vector3 roatationToMovementVector(float r) {
+    public Vector3 roatationToMovementVector(float r) {
         //this is done with unit circle
         Vector3 vector = new Vector3(Mathf.Round(Mathf.Cos(Mathf.PI / 2 + r)),Mathf.Round(Mathf.Sin(Mathf.PI/2 + r)),0);
 
