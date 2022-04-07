@@ -6,19 +6,18 @@ public class PlayerAudioControler : MonoBehaviour
 {
     [SerializeField] GameObject soundRight, soundLeft;
     [SerializeField] bool rightEar, leftEar;
-    // Start is called before the first frame update
-    void Start()
+    float collisionCheckerSize = .2f;
+
+    PlayerMovement player;
+    private void Awake()
     {
-        
+        player = gameObject.GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-         PlayerMovement player = GameManganer.Instance.player;
-         Vector2 rightVector = (Vector2) player.roatationToMovementVector(0);
-         spaceCheck(wallCheck(rightVector), soundRight);
-         spaceCheck(leftEar, soundLeft);
+         spaceCheck(wallCheck(soundRight), soundRight);
+         spaceCheck(wallCheck(soundLeft), soundLeft);
 
     }
 
@@ -30,10 +29,15 @@ public class PlayerAudioControler : MonoBehaviour
             ear.SetActive(false);
     }
 
-    bool wallCheck(Vector2 dire)
+    bool wallCheck(GameObject ball)
     {
-        Debug.DrawRay(transform.position, dire, Color.red);
-        return false;
+        
+        return (!Physics2D.OverlapCircle(ball.transform.position, collisionCheckerSize, player.whatStopsMovement));
 
+    }
+
+    void playerSFX(AudioClip audioClip)
+    {
+        SoundManager.instance.playEffect(gameObject, audioClip);
     }
 }

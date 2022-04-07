@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
+    [SerializeField] private GameObject preSFX;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -35,6 +36,13 @@ public class SoundManager : MonoBehaviour
     public void playEffect(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
+    }
+
+    public void playEffect(GameObject target, AudioClip clip)
+    {
+        GameObject obj = Instantiate(preSFX, target.transform.position, target.transform.rotation, target.transform);
+
+        obj.GetComponent<playSFX>()._clip = clip;
     }
 
     public void playVoice(AudioClip vclip)
@@ -67,4 +75,10 @@ public class SoundManager : MonoBehaviour
         musicSource.mute = !musicSource.mute;
     }
 
+}
+
+public class AudioSoundClip
+{
+    public string sound_name;
+    public AudioClip audio;
 }
