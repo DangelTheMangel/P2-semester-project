@@ -1426,6 +1426,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
   - sound_name: TrapAct
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+  - sound_name: HitWall
+    audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0
@@ -1918,9 +1920,13 @@ MonoBehaviour:
   movePoint: {fileID: 339143765}
   playerSprite: {fileID: 0}
   moveVector: {x: 0, y: 1, z: 0}
+  PAC: {fileID: 0}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
+  turnSound: TurnSound
+  footStep: Footstep
+  hitWall: HitWall
 --- !u!61 &1839967724
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PlayerAudioControler : MonoBehaviour
         player = gameObject.GetComponent<PlayerMovement>();
     }
 
-    void Update()
+    public void MovementCheck()
     {
          spaceCheck(wallCheck(soundRight), soundRight);
          spaceCheck(wallCheck(soundLeft), soundLeft);

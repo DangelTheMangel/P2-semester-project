@@ -15,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveVector = new Vector3(0f, 1f, 0f);
     bool buttonRealse = true;
     private PlayerControls playerControls;
-
+    public PlayerAudioControler PAC;
     public LayerMask whatStopsMovement;
-
+    [SerializeField] private string turnSound = "TurnSound";
+    [SerializeField] private string footStep = "Footstep";
+    [SerializeField] private string hitWall = "HitWall";
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movePoint.parent = null;
         playerControls.Freemovement.Rotate.performed += Rotate;
+        PAC = GetComponent<PlayerAudioControler>();
     }
     private void Rotate(InputAction.CallbackContext context)
     {
@@ -58,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.eulerAngles += new Vector3(0, 0, (-playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
                 moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
                 buttonRealse = false;
-                SoundManager.instance.playEffect(gameObject, "TurnSound");
+                SoundManager.instance.playEffect(gameObject, turnSound);
             }
             // if button was not pressed set that the button button wasnt pressed
             else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
@@ -77,7 +80,12 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
                 {
                     movePoint.position += moveVector;
-                    SoundManager.instance.playEffect(gameObject, "Footstep");
+                    SoundManager.instance.playEffect(gameObject, footStep);
+                    PAC.MovementCheck();
+                }
+                else
+                {
+                    SoundManager.instance.playEffect(gameObject, hitWall);
                 }
             }
         }
