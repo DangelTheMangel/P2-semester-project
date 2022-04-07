@@ -33,6 +33,14 @@ public class GameManganer : MonoBehaviour
 
     public PlayerMovement player;
 
+    private void Update()
+    {
+        if (player == null && sceneOfDeath == SceneManager.GetActiveScene().buildIndex)
+        {
+            player = FindObjectOfType<PlayerMovement>();
+        }
+    }
+
     public void winGame() {
         Debug.Log("game won ");
         sceneManganer.loadScene(0);
