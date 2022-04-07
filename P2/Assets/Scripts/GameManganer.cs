@@ -43,6 +43,6 @@ public class GameManganer : MonoBehaviour
 
     public void winGame() {
         Debug.Log("game won ");
-        sceneManganer.loadScene(0);
+        sceneManganer.loadNextLevel();
     }
 }

@@ -1420,6 +1420,12 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: bc5a9ea4924b0f443ac215db04a72efb, type: 3}
   - sound_name: TurnSound
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+  - sound_name: ArrowHit
+    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+  - sound_name: ArrowBlocked
+    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+  - sound_name: TrapAct
+    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0
@@ -2054,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName:
   - Test level 2
+  levelIndex: 0
   changeScene: 0
 --- !u!4 &2013530348
 Transform:
@@ -3061,6 +3068,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7469306449482555795, guid: c18a585f54f369342a09af533ca2529e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7500514865867541048, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3079,11 +3090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7500514865867541048, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.004
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 7500514865867541048, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.006
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7500514865867541048, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3116,6 +3127,10 @@ PrefabInstance:
     - target: {fileID: 7500514865867541048, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500514865867541051, guid: c18a585f54f369342a09af533ca2529e, type: 3}
+      propertyPath: soundEffectName
+      value: TrapAct
       objectReference: {fileID: 0}
     - target: {fileID: 7500514865867541052, guid: c18a585f54f369342a09af533ca2529e, type: 3}
       propertyPath: m_Name
