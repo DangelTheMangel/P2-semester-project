@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //based on https://youtu.be/XUx_QlJpd0M
-public class InputManager : MonoBehaviour
+
+[DefaultExecutionOrder(-1)]
+public class InputManager : Singleton<InputManager>
 {
 
     #region Events

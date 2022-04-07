@@ -23,12 +23,32 @@ public class Singleton<T> : MonoBehaviour
                 }
                 if (_instance == null)
                 {
-                    GameObject obj = new GameObject ();
+                    GameObject obj = new GameObject();
                     obj.hideFlags = HideFlags.HideAndDontSave;
-                    _instance = obj.AddComponent<T> ();
+                    _instance = obj.AddComponent<T>();
                 }
             }
             return _instance;
+        }
+    }
+}
+
+
+public class SingletonPersistent<T> : MonoBehaviour
+    where T : Component
+{
+    public static T Instance { get; private set; }
+
+    public virtual void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this as T;
+            DontDestroyOnLoad(this);
+        }
+        else 
+        { 
+            Destroy(gameObject); 
         }
     }
 }
