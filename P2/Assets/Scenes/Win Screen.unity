@@ -671,7 +671,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 986.6, y: 626.8}
+  m_SizeDelta: {x: 929.8, y: 522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271926092
 MonoBehaviour:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02b93bc402a03874e8c18d8fc5666ed6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 310318ea739b2b3499c03d26e22d4092, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -743,6 +743,8 @@ MonoBehaviour:
   musicSource: {fileID: 1636147794}
   effectSource: {fileID: 410443338}
   voiceSource: {fileID: 0}
+  preSFX: {fileID: 0}
+  SoundArray: []
 --- !u!4 &1380183503
 Transform:
   m_ObjectHideFlags: 0
