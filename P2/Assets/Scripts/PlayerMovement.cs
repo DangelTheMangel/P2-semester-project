@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.eulerAngles += new Vector3(0, 0, (-playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
                 moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
                 buttonRealse = false;
-                SoundManager.instance.playEffect(gameObject, "TrunSound");
+                SoundManager.instance.playEffect(gameObject, "TurnSound");
             }
             // if button was not pressed set that the button button wasnt pressed
             else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
