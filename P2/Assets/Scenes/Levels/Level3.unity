@@ -174,30 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7868739473590228344, guid: eae0905754e58634287cc41c24b03055, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868739473590228344, guid: eae0905754e58634287cc41c24b03055, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868739473590228344, guid: eae0905754e58634287cc41c24b03055, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868739473590228344, guid: eae0905754e58634287cc41c24b03055, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.56
-      objectReference: {fileID: 0}
     - target: {fileID: 7868739473590228346, guid: eae0905754e58634287cc41c24b03055, type: 3}
       propertyPath: m_Name
       value: TrapActivator(Win)
       objectReference: {fileID: 0}
-    - target: {fileID: 7868739473590228347, guid: eae0905754e58634287cc41c24b03055, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a2ad7aa908b58524fac5949801d6a892, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae0905754e58634287cc41c24b03055, type: 3}
 --- !u!1001 &335849009
