@@ -36,7 +36,7 @@ public class PlayerAudioControler : MonoBehaviour
 
     }
 
-    void playerSFX(AudioClip audioClip)
+    void playerSFX(string audioClip)
     {
         SoundManager.instance.playEffect(gameObject, audioClip);
     }
