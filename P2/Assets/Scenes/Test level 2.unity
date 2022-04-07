@@ -1263,7 +1263,12 @@ MonoBehaviour:
   musicSource: {fileID: 1133221654}
   effectSource: {fileID: 145437572}
   voiceSource: {fileID: 777610467}
-  preSFX: {fileID: 0}
+  preSFX: {fileID: 3432376606786287910, guid: 53a4fff3491edba40909bb1828f131c8, type: 3}
+  SoundArray:
+  - sound_name: Footstep
+    audio: {fileID: 8300000, guid: ef587aa65d3f871418861d394cd53b41, type: 3}
+  - sound_name: TurnSound
+    audio: {fileID: 8300000, guid: ef587aa65d3f871418861d394cd53b41, type: 3}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0

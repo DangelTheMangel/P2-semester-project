@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.eulerAngles += new Vector3(0, 0, (-playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
                 moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
                 buttonRealse = false;
+                SoundManager.instance.playEffect(gameObject, "TrunSound");
             }
             // if button was not pressed set that the button button wasnt pressed
             else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
                 {
                     movePoint.position += moveVector;
+                    SoundManager.instance.playEffect(gameObject, "Footstep");
                 }
             }
         }
