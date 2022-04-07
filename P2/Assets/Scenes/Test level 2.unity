@@ -1268,7 +1268,7 @@ MonoBehaviour:
   - sound_name: Footstep
     audio: {fileID: 8300000, guid: ef587aa65d3f871418861d394cd53b41, type: 3}
   - sound_name: TurnSound
-    audio: {fileID: 8300000, guid: ef587aa65d3f871418861d394cd53b41, type: 3}
+    audio: {fileID: 8300000, guid: ca3a02c0d1e35d045834212832bda631, type: 3}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0
