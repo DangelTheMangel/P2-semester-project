@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timedReaction: 1
-  reactionTimer: 5
+  reactionTimer: 3
   startReaction: 0
-  startplayerReaction: 3
+  startplayerReaction: 2
   arrowObject: {fileID: 0}
   arrowprefab: {fileID: 4570922081911716802, guid: 0d21c1b3fa5961e49940ee938c432369, type: 3}
   arrowpointName: ArrowPoint
