@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
             //if the button are pressed and the button wasnt pressed last frame rotate
             if (Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) == 1f && buttonRealse)
             {
+                PAC.MovementCheck();
                 Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
                 transform.eulerAngles += new Vector3(0, 0, (-playerControls.Freemovement.Rotate.ReadValue<float>() * 90));
                 moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
