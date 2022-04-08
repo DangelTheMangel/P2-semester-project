@@ -50,6 +50,7 @@ public class ArrowEvent : Event
     public override void faildReaction()
     {
         Debug.LogWarning("du blev ramt");
+        SoundManager.instance.playEffect(GameManganer.Instance.player.gameObject, "ArrowHit");
         Destroy(arrowObject);
         Destroy(gameObject);
         GameManganer.Instance.Death();
@@ -57,6 +58,7 @@ public class ArrowEvent : Event
 
     public override void completedReaction()
     {
+        SoundManager.instance.playEffect(GameManganer.Instance.player.gameObject, "ArrowBlocked");
         Debug.Log("du unvig");
         Destroy(arrowObject);
         Destroy(gameObject);
