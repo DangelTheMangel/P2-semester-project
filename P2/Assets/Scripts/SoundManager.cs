@@ -15,7 +15,9 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     [SerializeField] private GameObject preSFX;
-    [SerializeField] private AudioSoundClip[] SoundArray; 
+    [SerializeField] private AudioSoundClip[] SoundArray;
+    [SerializeField] private VoiceLines[] VoiceArray;
+    [SerializeField] private GameObject VoiceStart;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -47,9 +49,17 @@ public class SoundManager : MonoBehaviour
         obj.GetComponent<playSFX>()._clip = findSound(soundName);
     }
 
-    public void playVoice(AudioClip vclip)
+    public void InstantiateVoice(AudioClip vclip)
     {
-        voiceSource.PlayOneShot(vclip);
+        effectSource.PlayOneShot(vclip);
+    }
+
+    public void InstantiateVoice(GameObject target, string VoiceName)
+    {
+        GameObject voi = Instantiate(VoiceStart, target.transform.position, target.transform.rotation, target.transform);
+
+        voi.GetComponent<PlayVoice>()._voices = findSound(VoiceName);
+        
     }
 
     public void changeMasterVolume(float value)
@@ -85,5 +95,13 @@ public class SoundManager : MonoBehaviour
 public class AudioSoundClip
 {
     public string sound_name;
+    public AudioClip audio;
+}
+
+[Serializable]
+
+public class VoiceLines
+{
+    public string voice_name;
     public AudioClip audio;
 }

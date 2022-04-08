@@ -11,7 +11,7 @@ public class PlayVoice : MonoBehaviour
 
        void Start()
     {
-        SoundManager.instance.playVoice(_voices);
+        SoundManager.instance.InstantiateVoice(_voices);
         voiceLines = GetComponent<AudioSource>();
         voiceLines.clip = _voices;
     }
