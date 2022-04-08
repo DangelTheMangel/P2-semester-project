@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minumumDistance: 0.2
   maximumDistance: 1
-  dirThreshold: 0.9
+  dirThreshold: 0.2
   moveSpeed: 10
   collisionCheckerSize: 0.42
   movePoint: {fileID: 651829016}
