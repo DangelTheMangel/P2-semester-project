@@ -68,13 +68,6 @@ public class PlayerMovement : MonoBehaviour
             else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
                 buttonRealse = true;
             }
-        /*if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
-        {
-            if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), collisionCheckerSize, whatStopsMovement))
-            {
-                movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-            }
-        }*/
 
             if (playerControls.Freemovement.Move.triggered)
             {
