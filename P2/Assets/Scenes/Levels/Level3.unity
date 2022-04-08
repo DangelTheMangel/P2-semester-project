@@ -168,7 +168,7 @@ MonoBehaviour:
   - sound_name: TrapAct
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
   - sound_name: HitWall
-    audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
+    audio: {fileID: 8300000, guid: ca3a02c0d1e35d045834212832bda631, type: 3}
   VoiceArray: []
   VoiceStart: {fileID: 0}
 --- !u!4 &132013686
