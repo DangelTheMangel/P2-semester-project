@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 /// <summary>
 /// This class controlls all the sound and are inspired by :
 /// https://www.youtube.com/watch?v=tEsuLTpz_DU&ab_channel=Tarodev
@@ -15,7 +16,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     [SerializeField] private GameObject preSFX;
-    [SerializeField] private AudioSoundClip[] SoundArray; 
+    [SerializeField] private AudioSoundClip[] SoundArray;
+    
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -44,7 +46,9 @@ public class SoundManager : MonoBehaviour
     {
         GameObject obj = Instantiate(preSFX, target.transform.position, target.transform.rotation, target.transform);
 
-        obj.GetComponent<playSFX>()._clip = findSound(soundName);
+        obj.GetComponent<playSFX>()._clip = findSound(soundName).audio;
+
+        obj.GetComponent<playSFX>().MyMixerGroup = findSound(soundName).mixerGroup;
     }
 
     public void playVoice(AudioClip vclip)
@@ -57,16 +61,16 @@ public class SoundManager : MonoBehaviour
         AudioListener.volume = value;
     }
 
-    public AudioClip findSound(string audioName)
+    public AudioSoundClip findSound(string audioName)
     {
-        AudioClip selected = null;
+        AudioSoundClip selected = null;
         
         for(int i = 0; i<SoundArray.Length; ++i)
         {
             AudioSoundClip currentI = SoundArray[i];
             if (audioName == currentI.sound_name)
             {
-                selected = currentI.audio;
+                selected = currentI;
                 break;
             }
         }
@@ -86,4 +90,5 @@ public class AudioSoundClip
 {
     public string sound_name;
     public AudioClip audio;
+    public AudioMixerGroup mixerGroup;
 }

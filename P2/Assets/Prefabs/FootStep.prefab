@@ -149,7 +149,7 @@ AudioReverbFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3432376606786287910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_DryLevel: 0
   m_Room: 0
   m_RoomHF: 0

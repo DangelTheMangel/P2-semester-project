@@ -183,7 +183,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.618
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1417,17 +1417,23 @@ MonoBehaviour:
   preSFX: {fileID: 3432376606786287910, guid: 53a4fff3491edba40909bb1828f131c8, type: 3}
   SoundArray:
   - sound_name: Footstep
-    audio: {fileID: 8300000, guid: bc5a9ea4924b0f443ac215db04a72efb, type: 3}
+    audio: {fileID: 8300000, guid: aa11e3ecbc0d5104f9e51addf7a580f2, type: 3}
+    mixerGroup: {fileID: 0}
   - sound_name: TurnSound
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+    mixerGroup: {fileID: 0}
   - sound_name: ArrowHit
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+    mixerGroup: {fileID: 0}
   - sound_name: ArrowBlocked
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+    mixerGroup: {fileID: 0}
   - sound_name: TrapAct
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
+    mixerGroup: {fileID: 0}
   - sound_name: HitWall
     audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
+    mixerGroup: {fileID: 0}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0
