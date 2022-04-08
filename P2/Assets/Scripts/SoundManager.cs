@@ -13,9 +13,9 @@ using System;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
+    [SerializeField] private AudioSource musicSource, effectSource, voiceLines;
     [SerializeField] private GameObject preSFX;
-    [SerializeField] private AudioSoundClip[] SoundArray; 
+    [SerializeField] private AudioSoundClip[] SoundArray;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviour
 
         if(selected == null)
         {
-            Debug.LogError("Sound Cringe");
+            Debug.LogError("sound was lost in the void, go help it befor reality collapses");
             return null;
         }
         return selected;
@@ -87,3 +87,4 @@ public class AudioSoundClip
     public string sound_name;
     public AudioClip audio;
 }
+
