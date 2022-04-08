@@ -169,8 +169,6 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
   - sound_name: HitWall
     audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
-  VoiceArray: []
-  VoiceStart: {fileID: 0}
 --- !u!4 &132013686
 Transform:
   m_ObjectHideFlags: 0
@@ -478,7 +476,6 @@ GameObject:
   - component: {fileID: 779103737}
   - component: {fileID: 779103739}
   - component: {fileID: 779103738}
-  - component: {fileID: 779103740}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -551,18 +548,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &779103740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779103736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13a40093b16d8c488696da5d2820afd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &789361544
 PrefabInstance:
   m_ObjectHideFlags: 0
