@@ -18,10 +18,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private GameObject preSFX;
     [SerializeField] private AudioSoundClip[] SoundArray;
     
+    [SerializeField] private VoiceLines[] VoiceArray;
+    [SerializeField] private GameObject VoiceStart;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
-        //gøre denne til instance ellers ødlæg dette gameobject
+        //gï¿½re denne til instance ellers ï¿½dlï¿½g dette gameobject
         if (instance == null)
         {
             instance = this;
@@ -52,9 +54,17 @@ public class SoundManager : MonoBehaviour
         obj.GetComponent<playSFX>().PlayAudio();
     }
 
-    public void playVoice(AudioClip vclip)
+    public void InstantiateVoice(AudioClip vclip)
     {
-        voiceSource.PlayOneShot(vclip);
+        effectSource.PlayOneShot(vclip);
+    }
+
+    public void InstantiateVoice(GameObject target, string VoiceName)
+    {
+        GameObject voi = Instantiate(VoiceStart, target.transform.position, target.transform.rotation, target.transform);
+
+        voi.GetComponent<PlayVoice>()._voices = findSound(VoiceName);
+        
     }
 
     public void changeMasterVolume(float value)
@@ -92,4 +102,12 @@ public class AudioSoundClip
     public string sound_name;
     public AudioClip audio;
     public AudioMixerGroup mixerGroup;
+}
+
+[Serializable]
+
+public class VoiceLines
+{
+    public string voice_name;
+    public AudioClip audio;
 }
