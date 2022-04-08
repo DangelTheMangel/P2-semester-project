@@ -568,6 +568,7 @@ MonoBehaviour:
   - Level1
   - Level2
   - Level3
+  - LevelFinal
   levelIndex: 0
   changeScene: 0
 --- !u!4 &544894282

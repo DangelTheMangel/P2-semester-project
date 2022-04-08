@@ -20,4 +20,9 @@ public class RespawnPlayer : MonoBehaviour
             SceneManager.LoadScene(GameManganer.Instance.sceneOfDeath);
         }
     }
+
+    public void Resetter()
+    {
+        SceneManager.LoadScene(GameManganer.Instance.sceneOfDeath);
+    }
 }
