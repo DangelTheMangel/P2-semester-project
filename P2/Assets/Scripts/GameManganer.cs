@@ -35,7 +35,7 @@ public class GameManganer : MonoBehaviour
 
     private void Update()
     {
-        if (player == null && sceneOfDeath == SceneManager.GetActiveScene().buildIndex)
+        if (player == null && SceneManager.GetActiveScene().name != "GameOver")
         {
             player = FindObjectOfType<PlayerMovement>();
         }
