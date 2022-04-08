@@ -49,6 +49,7 @@ public class SoundManager : MonoBehaviour
         obj.GetComponent<playSFX>()._clip = findSound(soundName).audio;
 
         obj.GetComponent<playSFX>().MyMixerGroup = findSound(soundName).mixerGroup;
+        obj.GetComponent<playSFX>().PlayAudio();
     }
 
     public void playVoice(AudioClip vclip)

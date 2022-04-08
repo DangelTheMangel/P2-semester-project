@@ -274,7 +274,7 @@ AudioReverbFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145437571}
-  m_Enabled: 1
+  m_Enabled: 0
   m_DryLevel: 0
   m_Room: 0
   m_RoomHF: 0
@@ -1417,8 +1417,8 @@ MonoBehaviour:
   preSFX: {fileID: 3432376606786287910, guid: 53a4fff3491edba40909bb1828f131c8, type: 3}
   SoundArray:
   - sound_name: Footstep
-    audio: {fileID: 8300000, guid: aa11e3ecbc0d5104f9e51addf7a580f2, type: 3}
-    mixerGroup: {fileID: 0}
+    audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
+    mixerGroup: {fileID: 7341604330998150755, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: TurnSound
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
     mixerGroup: {fileID: 0}
