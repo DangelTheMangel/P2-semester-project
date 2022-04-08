@@ -40,6 +40,8 @@ public class SceneManganer : MonoBehaviour
         }
         else {
             Debug.LogWarning("no more level");
+            SceneManager.LoadScene("MainMenu");
+            levelIndex = 0;
         }
         
     }
