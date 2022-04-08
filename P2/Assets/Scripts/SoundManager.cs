@@ -63,7 +63,7 @@ public class SoundManager : MonoBehaviour
     {
         GameObject voi = Instantiate(VoiceStart, target.transform.position, target.transform.rotation, target.transform);
 
-        voi.GetComponent<PlayVoice>()._voices = findSound(VoiceName);
+        voi.GetComponent<PlayVoice>()._voices = findSound(VoiceName).audio;
         
     }
 
