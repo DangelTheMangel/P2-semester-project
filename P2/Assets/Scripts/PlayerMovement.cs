@@ -7,6 +7,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("input")]
+    [SerializeField]
+    private float minumumDistance = .2f;
+    [SerializeField]
+    private float maximumDistance = 1;
+    [SerializeField, Range(0, 1)]
+    private float dirThreshold = .9f;
+
+    private InputManage inputManager;
+    private Vector2 startPosition;
+    private float startTime;
+    private Vector2 endPosition;
+    private float endTime;
+
+    [Header("player settings")]
     public float moveSpeed = 100f;
     public float collisionCheckerSize = .2f;
     public Transform movePoint;
@@ -22,17 +37,107 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string hitWall = "HitWall";
     private void Awake()
     {
+        //new
+        inputManager = InputManage.instance;
+        //old
+        inputManager = InputManage.instance;
         playerControls = new PlayerControls();
     }
     private void OnEnable()
     {
+        //new
+        inputManager.onStartTouch += swipeStart;
+        inputManager.onEndTouch += swipeEnd;
+        //
         playerControls.Enable();
     }
     private void OnDisable()
     {
+        //new
+        inputManager.onStartTouch -= swipeStart;
+        inputManager.onEndTouch -= swipeEnd;
+        //
         playerControls.Disable();
         GameManganer.Instance.player = this;
     }
+
+    private void swipeStart(Vector2 pos, float time)
+    {
+        startPosition = pos;
+        startTime = time;
+    }
+
+    private void swipeEnd(Vector2 pos, float time)
+    {
+        endPosition = pos;
+        endTime = time;
+        detectSwipe();
+    }
+
+    private void detectSwipe()
+    {
+        Debug.Log("detectSwipe" + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+            (endTime - startTime) <= maximumDistance));
+        if (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+            (endTime - startTime) <= maximumDistance)
+        {
+            Debug.DrawLine(startPosition, endPosition, Color.blue, 5f);
+
+            Vector3 dir = endPosition - startPosition;
+            Vector2 dir2 = new Vector2(dir.x, dir.y).normalized;
+            Debug.Log("dir:" + dir + "dir2" + dir2 + "s" + startPosition + "e" + endPosition);
+            swipeDirection(dir2);
+        }
+
+    }
+
+    private void swipeDirection(Vector2 direction)
+    {
+
+        if (Vector2.Dot(Vector2.up, direction) > dirThreshold)
+        {
+            Debug.Log("swipeUP");
+            moveplayer();
+        }
+        else if (Vector2.Dot(Vector2.down, direction) > dirThreshold)
+        {
+            Debug.Log("swipeDown");
+        }
+        else if (Vector2.Dot(Vector2.left, direction) > dirThreshold)
+        {
+            Debug.Log("swipeLeft");
+            rotatePlayer(-1);
+        }
+        else if (Vector2.Dot(Vector2.right, direction) > dirThreshold)
+        {
+            Debug.Log("swipeRight");
+            rotatePlayer(1);
+        }
+    }
+
+    void rotatePlayer(float val) {
+        Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
+        transform.eulerAngles += new Vector3(0, 0, (-val * 90));
+        moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
+        buttonRealse = false;
+        PAC.MovementCheck();
+        SoundManager.instance.playEffect(gameObject, turnSound);
+    }
+
+    void moveplayer() {
+        if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
+        {
+            movePoint.position += moveVector;
+            SoundManager.instance.playEffect(gameObject, footStep);
+            PAC.MovementCheck();
+        }
+        else
+        {
+            SoundManager.instance.playEffect(gameObject, hitWall);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

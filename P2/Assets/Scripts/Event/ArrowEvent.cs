@@ -16,6 +16,11 @@ public class ArrowEvent : Event
     public string arrowpointName;
     //the input system class
     private PlayerControls playerControls;
+
+    [SerializeField]
+    float roationdifferents = 0.3f;
+    bool startRotationFound = false;
+    Quaternion startRotation;
     private void Start()
     {
         //the inputsystem class begin intilsiset
@@ -44,7 +49,27 @@ public class ArrowEvent : Event
 
     public override bool passedCheck()
     {
-        return (playerControls.Freemovement.Interact.triggered && reactionTimer < startplayerReaction);
+        if (InputManage.instance.gyroEnable) {
+            Quaternion rotatationOfMobil = InputManage.instance.gyroscope.attitude;
+            if (!startRotationFound) {
+                startRotation = new Quaternion(rotatationOfMobil.x, rotatationOfMobil.y, rotatationOfMobil.z, rotatationOfMobil.w);
+                startRotationFound = true;
+            }
+            bool moved = (
+                rotatationOfMobil.x > startRotation.x + roationdifferents ||
+                rotatationOfMobil.x < startRotation.x - roationdifferents ||
+                rotatationOfMobil.y > startRotation.y + roationdifferents ||
+                rotatationOfMobil.y < startRotation.y - roationdifferents ||
+                rotatationOfMobil.z > startRotation.z + roationdifferents ||
+                rotatationOfMobil.z < startRotation.z - roationdifferents 
+
+                );
+            return (moved && reactionTimer < startplayerReaction);
+        }
+        else
+        {
+            return (playerControls.Freemovement.Interact.triggered && reactionTimer < startplayerReaction);
+        }
     }
 
     public override void faildReaction()
