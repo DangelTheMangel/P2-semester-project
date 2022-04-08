@@ -49,9 +49,16 @@ public class ArrowEvent : Event
 
     public override bool passedCheck()
     {
-        if (InputManage.instance.gyroEnable) {
+        if (playerControls.Freemovement.Interact.triggered && reactionTimer < startplayerReaction)
+        {
+            return true;
+        }
+        else
+        if (InputManage.instance.gyroEnable)
+        {
             Quaternion rotatationOfMobil = InputManage.instance.gyroscope.attitude;
-            if (!startRotationFound) {
+            if (!startRotationFound)
+            {
                 startRotation = new Quaternion(rotatationOfMobil.x, rotatationOfMobil.y, rotatationOfMobil.z, rotatationOfMobil.w);
                 startRotationFound = true;
             }
@@ -61,15 +68,17 @@ public class ArrowEvent : Event
                 rotatationOfMobil.y > startRotation.y + roationdifferents ||
                 rotatationOfMobil.y < startRotation.y - roationdifferents ||
                 rotatationOfMobil.z > startRotation.z + roationdifferents ||
-                rotatationOfMobil.z < startRotation.z - roationdifferents 
+                rotatationOfMobil.z < startRotation.z - roationdifferents
 
                 );
             return (moved && reactionTimer < startplayerReaction);
         }
         else
         {
-            return (playerControls.Freemovement.Interact.triggered && reactionTimer < startplayerReaction);
+
+            return false;
         }
+        
     }
 
     public override void faildReaction()
