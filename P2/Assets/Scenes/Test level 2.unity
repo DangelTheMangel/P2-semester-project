@@ -1417,23 +1417,25 @@ MonoBehaviour:
   preSFX: {fileID: 3432376606786287910, guid: 53a4fff3491edba40909bb1828f131c8, type: 3}
   SoundArray:
   - sound_name: Footstep
-    audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
+    audio: {fileID: 8300000, guid: d6d7a4761c6c4a74382952b87a56afdb, type: 3}
     mixerGroup: {fileID: 7341604330998150755, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: TurnSound
-    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
-    mixerGroup: {fileID: 0}
+    audio: {fileID: 8300000, guid: 2fd8f9aaa5dae4b4f8f71fbc4d8493dd, type: 3}
+    mixerGroup: {fileID: -1878824915107977321, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: ArrowHit
-    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
-    mixerGroup: {fileID: 0}
+    audio: {fileID: 8300000, guid: 6d36250e95956064485007b5bbab3dbd, type: 3}
+    mixerGroup: {fileID: -1768017560437573207, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: ArrowBlocked
-    audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
-    mixerGroup: {fileID: 0}
+    audio: {fileID: 8300000, guid: c532eb59e56bfed42a917837f7aad1a5, type: 3}
+    mixerGroup: {fileID: -6936575854869814231, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: TrapAct
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -7412148978543054888, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: HitWall
-    audio: {fileID: 8300000, guid: 44ad820dbeb6a7f419f24f1d7acdf452, type: 3}
-    mixerGroup: {fileID: 0}
+    audio: {fileID: 8300000, guid: bc2878c91d381e348b6123c492b37355, type: 3}
+    mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+  VoiceArray: []
+  VoiceStart: {fileID: 0}
 --- !u!4 &758958292
 Transform:
   m_ObjectHideFlags: 0
