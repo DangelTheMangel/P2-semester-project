@@ -21,7 +21,6 @@ public class InputManage : MonoBehaviour
     #endregion
     public Gyroscope gyroscope;
     public bool gyroEnable = false;
-    private Camera mainCamera;
     private PlayerController playerController;
     
 
@@ -42,17 +41,18 @@ public class InputManage : MonoBehaviour
             gyroEnable = gyroscope.enabled;
         }
         playerController = new PlayerController();
-        mainCamera = Camera.main;
     }
 
     private void OnEnable()
     {
+        if(playerController != null)
         playerController.Enable();
     }
 
     private void OnDisable()
     {
-        playerController.Disable();
+        if (playerController != null)
+            playerController.Disable();
     }
     // Start is called before the first frame update
     void Start()
@@ -65,7 +65,7 @@ public class InputManage : MonoBehaviour
     {
         if (onEndTouch != null)
         {
-            onEndTouch(utilities.screenToWorld(mainCamera, playerController.Touch.PrimaryPostion.ReadValue<Vector2>()), (float)ctx.time);
+            onEndTouch(utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>()), (float)ctx.time);
             Debug.Log("endpos" + playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
         }
     }
@@ -74,14 +74,14 @@ public class InputManage : MonoBehaviour
     {
         if (onStartTouch != null)
         {
-            onStartTouch(utilities.screenToWorld(mainCamera, playerController.Touch.PrimaryPostion.ReadValue<Vector2>()), (float)ctx.startTime);
+            onStartTouch(utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>()), (float)ctx.startTime);
             Debug.Log("startpos" + playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
         }
     }
 
     public Vector2 primaryPostion()
     {
-        return utilities.screenToWorld(mainCamera, playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
+        return utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
     }
 
 
