@@ -10,6 +10,10 @@ public class VoiceLevel1 : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (PlayerPrefs.GetInt("DialogueOff") == 1)
+        {
+            Destroy(gameObject);
+        }
         existingMusic = FindObjectOfType<VoiceLevel1>().gameObject;
         if (existingMusic != null & existingMusic != this.gameObject)
         {

@@ -196,6 +196,12 @@ MonoBehaviour:
   - sound_name: HitWall
     audio: {fileID: 8300000, guid: bc2878c91d381e348b6123c492b37355, type: 3}
     mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+  - sound_name: DialogueOn
+    audio: {fileID: 8300000, guid: 46f796953099e7143800e8e271172440, type: 3}
+    mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+  - sound_name: DialogueOff
+    audio: {fileID: 8300000, guid: 23af585f014dae7489f4926f454ce4d1, type: 3}
+    mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   VoiceArray: []
   VoiceStart: {fileID: 0}
 --- !u!1 &3519422767487308108
