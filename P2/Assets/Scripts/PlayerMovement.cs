@@ -156,7 +156,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-
+        if (transform.position == movePoint.position)
+        {
+            PAC.MovementCheck();
+        }
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
             //if the button are pressed and the button wasnt pressed last frame rotate
@@ -180,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     movePoint.position += moveVector;
                     SoundManager.instance.playEffect(gameObject, footStep);
-                    PAC.MovementCheck();
+                    
                 }
                 else
                 {
