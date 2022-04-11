@@ -8,7 +8,7 @@ public class GameManganer : MonoBehaviour
     public static GameManganer Instance;
     public SceneManganer sceneManganer;
     public int sceneOfDeath;
-
+    public PlayerMovement player;
     private void Awake()
     {
         if (Instance == null)
@@ -31,7 +31,7 @@ public class GameManganer : MonoBehaviour
         Debug.Log("Get Owned Loser");
     }
 
-    public PlayerMovement player;
+  
 
     private void Update()
     {
