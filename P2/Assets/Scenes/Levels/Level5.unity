@@ -465,6 +465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fb4c71a45c6eb4aa6316c385d02972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minumumDistance: 0.1
+  maximumDistance: 1
+  dirThreshold: 0.7
   moveSpeed: 10
   collisionCheckerSize: 0.42
   movePoint: {fileID: 1920963595}
@@ -636,6 +639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fb4c71a45c6eb4aa6316c385d02972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minumumDistance: 0.2
+  maximumDistance: 1
+  dirThreshold: 0.9
   moveSpeed: 10
   collisionCheckerSize: 0.42
   movePoint: {fileID: 456760833}
