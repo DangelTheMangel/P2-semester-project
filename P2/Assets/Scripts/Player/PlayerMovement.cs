@@ -1,6 +1,5 @@
 //based on https://youtu.be/mbzXIOKZurA
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void detectSwipe()
     {
-
+        Debug.Log("detectSwipe" + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+            (endTime - startTime) <= maximumDistance));
         if (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance)
         {
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void swipeDirection(Vector2 direction)
     {
-        direction = (Vector3)Vector3Int.RoundToInt(direction);
+
         if (Vector2.Dot(Vector2.up, direction) > dirThreshold)
         {
             Debug.Log("swipeUP");
@@ -160,12 +160,6 @@ public class PlayerMovement : MonoBehaviour
         {
             PAC.MovementCheck();
         }
-        keyboardCheck();
-    //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
-    }
-
-    private void keyboardCheck()
-    {
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
             //if the button are pressed and the button wasnt pressed last frame rotate
@@ -179,8 +173,7 @@ public class PlayerMovement : MonoBehaviour
                 SoundManager.instance.playEffect(gameObject, turnSound);
             }
             // if button was not pressed set that the button button wasnt pressed
-            else if (Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f)
-            {
+            else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
                 buttonRealse = true;
             }
 
@@ -190,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     movePoint.position += moveVector;
                     SoundManager.instance.playEffect(gameObject, footStep);
-
+                    
                 }
                 else
                 {
@@ -198,8 +191,8 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+    //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
     }
-
 
     /// <summary>
     /// rotate radiant angle (+ PI/2) and convert to movement 

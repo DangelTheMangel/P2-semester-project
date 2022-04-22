@@ -2809,22 +2809,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 515388278999643897, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
-      propertyPath: moveSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 515388278999643897, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
-      propertyPath: dirThreshold
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 515388278999643897, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
-      propertyPath: maximumDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 515388278999643897, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
-      propertyPath: minumumDistance
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 515388278999643901, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: m_Name
       value: Player (1)
