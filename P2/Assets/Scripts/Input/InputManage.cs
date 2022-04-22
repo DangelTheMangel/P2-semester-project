@@ -7,6 +7,7 @@ using Gyroscope = UnityEngine.Gyroscope;
 
 /// <summary>
 /// This class are inspried by https://www.youtube.com/watch?v=XUx_QlJpd0M&t=1191s&ab_channel=samyam
+/// and this: https://stackoverflow.com/questions/31389598/how-can-i-detect-a-shake-motion-on-a-mobile-device-using-unity3d-c-sharp
 /// </summary>
 [DefaultExecutionOrder(-1)]
 public class InputManage : MonoBehaviour
@@ -22,7 +23,11 @@ public class InputManage : MonoBehaviour
     public Gyroscope gyroscope;
     public bool gyroEnable = false;
     private PlayerController playerController;
-    
+
+    [Header("accelerometer")]
+    float accelerometerUpdateInterval = 1.0f / 60.0f;
+    float lowPassKernelWidthInSeconds = 1.0f;
+    float lowPassFilterFactor;
 
     private void Awake()
     {
@@ -41,6 +46,7 @@ public class InputManage : MonoBehaviour
             gyroEnable = gyroscope.enabled;
         }
         playerController = new PlayerController();
+        
     }
 
     private void OnEnable()
@@ -59,6 +65,16 @@ public class InputManage : MonoBehaviour
     {
         playerController.Touch.PrimaryContact.started += ctx => startTouchPrimary(ctx);
         playerController.Touch.PrimaryContact.canceled += ctx => endTouchPrimary(ctx);
+        //
+        lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
+
+    }
+
+    public float getLowPassFilterFactor() {
+        return lowPassFilterFactor;
+    }
+    public Vector3 getAccelerometerVector() {
+        return Input.acceleration;
     }
 
     private void endTouchPrimary(InputAction.CallbackContext ctx)

@@ -8,6 +8,7 @@ public class GameManganer : MonoBehaviour
     public static GameManganer Instance;
     public SceneManganer sceneManganer;
     public int sceneOfDeath;
+    public bool shake = false;
     public PlayerMovement player;
     private void Awake()
     {
