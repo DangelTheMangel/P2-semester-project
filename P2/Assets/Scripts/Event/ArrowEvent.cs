@@ -21,8 +21,13 @@ public class ArrowEvent : Event
     float roationdifferents = 0.3f;
     bool startRotationFound = false;
     Quaternion startRotation;
+
+    Vector3 lowPassValue;
+    float shakeDetectionThreshold = 2.0f;
     private void Start()
     {
+        shakeDetectionThreshold *= shakeDetectionThreshold;
+        lowPassValue = Input.acceleration;
         //the inputsystem class begin intilsiset
         playerControls = new PlayerControls();
         //Input enabled
@@ -54,6 +59,43 @@ public class ArrowEvent : Event
             return true;
         }
         else
+        if (!GameManganer.Instance.shake)
+        {
+            return (vipedPhone() && reactionTimer < startplayerReaction);
+        }
+        else
+        if (GameManganer.Instance.shake)
+        {
+            return (shakePhone() && reactionTimer < startplayerReaction);
+        }
+        else
+        {
+
+            return false;
+        }
+        
+    }
+    bool shakePhone() {
+        if (Input.acceleration != null)
+        {
+            Vector3 acce = InputManage.instance.getAccelerometerVector();
+
+            lowPassValue = Vector3.Lerp(lowPassValue, acce, InputManage.instance.getLowPassFilterFactor());
+            Vector3 deltaAcceleration = acce - lowPassValue;
+
+            if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else { 
+           return false;
+        }   
+    }
+    bool vipedPhone() {
         if (InputManage.instance.gyroEnable)
         {
             Quaternion rotatationOfMobil = InputManage.instance.gyroscope.attitude;
@@ -73,14 +115,12 @@ public class ArrowEvent : Event
                 );
             return (moved && reactionTimer < startplayerReaction);
         }
-        else
-        {
-
+        else {
             return false;
         }
-        
     }
 
+    
     public override void faildReaction()
     {
         Debug.LogWarning("du blev ramt");

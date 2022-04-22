@@ -466,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManganer: {fileID: 544894281}
   sceneOfDeath: 0
+  shake: 1
   player: {fileID: 1439127545}
 --- !u!4 &793935339
 Transform:
