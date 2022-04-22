@@ -314,6 +314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f931e40d34599f84f8c88d6bfe815444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeOn: 1
+  buttonText:
+  - Shake On
+  - Tilted On
+  buttonTextObj: {fileID: 1956013384}
+  GameManagerPrefab: {fileID: 9071597736781253885, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
 --- !u!4 &487699324
 Transform:
   m_ObjectHideFlags: 0
@@ -732,7 +738,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 869611168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 487699323}
+        m_TargetAssemblyTypeName: ControlsEnabler, Assembly-CSharp
+        m_MethodName: tooglecontrols
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &869611168
 MonoBehaviour:
   m_ObjectHideFlags: 0
