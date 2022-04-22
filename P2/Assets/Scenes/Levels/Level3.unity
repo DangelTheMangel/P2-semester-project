@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7868739473590228345, guid: eae0905754e58634287cc41c24b03055, type: 3}
+      propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 6329858392947514186, guid: 4839dd6f33a18ad4b9187d5e44077336, type: 3}
     - target: {fileID: 7868739473590228346, guid: eae0905754e58634287cc41c24b03055, type: 3}
       propertyPath: m_Name
       value: TrapActivator(Win)
@@ -277,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManganer: {fileID: 1741594929}
   sceneOfDeath: 0
+  shake: 0
   player: {fileID: 0}
 --- !u!4 &373234739
 Transform:
