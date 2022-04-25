@@ -44,6 +44,15 @@ public class GameManganer : MonoBehaviour
 
     public void winGame() {
         Debug.Log("game won ");
-        sceneManganer.loadNextLevel();
+        if (sceneManganer == null) { 
+            sceneManganer = FindObjectOfType<SceneManganer>();
+        }
+        if (sceneManganer != null) {
+            sceneManganer.loadNextLevel();
+            }
+        else{
+                Debug.LogWarning("et eller andet er galt");
+            }
+        
     }
 }
