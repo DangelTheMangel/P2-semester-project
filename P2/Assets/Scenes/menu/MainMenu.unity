@@ -193,9 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quit
-
-'
+  m_Text: End
 --- !u!222 &27918590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -404,7 +402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vocieline On
+  m_Text: Voiceline On
 --- !u!222 &523617713
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1013,7 +1011,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Vocieline On
+  m_Text: Voiceline On
   m_NameLabel: {fileID: 523617710}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -1995,6 +1993,7 @@ GameObject:
   - component: {fileID: 2059784902}
   - component: {fileID: 2059784901}
   - component: {fileID: 2059784903}
+  - component: {fileID: 2059784904}
   m_Layer: 0
   m_Name: Dialogue Enabler
   m_TagString: Untagged
@@ -2048,7 +2047,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2132,3 +2131,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2059784904
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059784900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a62d56bb4a676e444a05816b1a874b7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
