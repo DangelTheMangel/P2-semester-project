@@ -72,6 +72,17 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.2d.tilemap.extras": {
+      "version": "file:C:/Users/stell/OneDrive/Skrivebord/stuff/Documents/AAU/Project docs/P2/2d-extras-1.8.1-preview/2d-extras-1.8.1-preview",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.modules.tilemap": "1.0.0",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.12",
       "depth": 0,
