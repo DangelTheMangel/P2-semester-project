@@ -194,7 +194,7 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
     mixerGroup: {fileID: -7412148978543054888, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: HitWall
-    audio: {fileID: 8300000, guid: bc2878c91d381e348b6123c492b37355, type: 3}
+    audio: {fileID: 8300000, guid: cb817f7a3f551a246a84f4f9982b90e7, type: 3}
     mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: DialogueOn
     audio: {fileID: 8300000, guid: 46f796953099e7143800e8e271172440, type: 3}
