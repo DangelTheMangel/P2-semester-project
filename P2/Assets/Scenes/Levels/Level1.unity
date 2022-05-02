@@ -3150,6 +3150,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: pathing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: pathingMixLevel
+      value: 5.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: reflectionsMixLevel
+      value: 3.61
+      objectReference: {fileID: 0}
     - target: {fileID: 8590118289895732601, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -3199,9 +3211,25 @@ PrefabInstance:
       value: Radar Sound
       objectReference: {fileID: 0}
     - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: m_Volume
+      value: 0.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: MaxDistance
+      value: 25.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: MinDistance
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e6519adf6d8c06a419b20015478dd446, type: 3}
+    - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8590118289895732603, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
       value: 0.15523784
