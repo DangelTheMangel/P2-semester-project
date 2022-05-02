@@ -20,9 +20,11 @@ public class InputManage : MonoBehaviour
     public delegate void endTouch(Vector2 postion, float time);
     public event endTouch onEndTouch;
     #endregion
+    [Header("gyroscope")]
     public Gyroscope gyroscope;
     public bool gyroEnable = false;
     private PlayerController playerController;
+    private Quaternion startPostion;
 
     [Header("accelerometer")]
     float accelerometerUpdateInterval = 1.0f / 60.0f;
@@ -49,6 +51,8 @@ public class InputManage : MonoBehaviour
         
     }
 
+    
+    
     private void OnEnable()
     {
         if(playerController != null)
@@ -68,6 +72,8 @@ public class InputManage : MonoBehaviour
         //
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
 
+        Quaternion gyro = gyroscope.attitude;
+        startPostion = new Quaternion(gyro.x, gyro.y, gyro.z, gyro.w);
     }
 
     public float getLowPassFilterFactor() {
@@ -101,9 +107,4 @@ public class InputManage : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
