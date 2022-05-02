@@ -59,11 +59,6 @@ public class ArrowEvent : Event
             return true;
         }
         else
-        if (!GameManganer.Instance.shake)
-        {
-            return (vipedPhone() && reactionTimer < startplayerReaction);
-        }
-        else
         if (GameManganer.Instance.shake)
         {
             return (shakePhone() && reactionTimer < startplayerReaction);
@@ -94,30 +89,6 @@ public class ArrowEvent : Event
         else { 
            return false;
         }   
-    }
-    bool vipedPhone() {
-        if (InputManage.instance.gyroEnable)
-        {
-            Quaternion rotatationOfMobil = InputManage.instance.gyroscope.attitude;
-            if (!startRotationFound)
-            {
-                startRotation = new Quaternion(rotatationOfMobil.x, rotatationOfMobil.y, rotatationOfMobil.z, rotatationOfMobil.w);
-                startRotationFound = true;
-            }
-            bool moved = (
-                rotatationOfMobil.x > startRotation.x + roationdifferents ||
-                rotatationOfMobil.x < startRotation.x - roationdifferents ||
-                rotatationOfMobil.y > startRotation.y + roationdifferents ||
-                rotatationOfMobil.y < startRotation.y - roationdifferents ||
-                rotatationOfMobil.z > startRotation.z + roationdifferents ||
-                rotatationOfMobil.z < startRotation.z - roationdifferents
-
-                );
-            return (moved && reactionTimer < startplayerReaction);
-        }
-        else {
-            return false;
-        }
     }
 
     
