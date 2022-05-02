@@ -3155,8 +3155,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: transmission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
       propertyPath: pathingMixLevel
       value: 5.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
+      propertyPath: reflectionsType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8590118289895732486, guid: 10b1e8b6edce3e445a79063a116c6943, type: 3}
       propertyPath: reflectionsMixLevel
