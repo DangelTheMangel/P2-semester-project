@@ -16,11 +16,17 @@ public class ArrowEvent : Event
     public string arrowpointName;
     //the input system class
     private PlayerControls playerControls;
+    //whether the arrow speed is randomized
+    public bool isRandom = false;
+    //max and min ammounts it can take when randomized
+    public float maxTime;
+    public float minTime;
 
     [SerializeField]
     float roationdifferents = 0.3f;
     bool startRotationFound = false;
     Quaternion startRotation;
+
 
     Vector3 lowPassValue;
     float shakeDetectionThreshold = 2.0f;
@@ -44,6 +50,11 @@ public class ArrowEvent : Event
                 arrowObject.GetComponent<arrowObject>().startPos = child.transform;
                 break;
             }
+        }
+
+        if (isRandom)
+        {
+            startReaction = Random.Range(minTime, maxTime);
         }
     }
     public override void reaction()
