@@ -9,6 +9,7 @@ public class GameManganer : MonoBehaviour
     public SceneManganer sceneManganer;
     public int sceneOfDeath;
     public bool shake = false;
+    public bool swipe = false;
     public PlayerMovement player;
     private void Awake()
     {

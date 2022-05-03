@@ -38,10 +38,10 @@ public class ControlsEnabler : MonoBehaviour
     }
     public void turnOff()
     {
-        GameManagerPrefab.GetComponent<GameManganer>().shake = false;
+        GameManagerPrefab.GetComponent<GameManganer>().swipe = false;
     }
     public void turnOn()
     {
-        GameManagerPrefab.GetComponent<GameManganer>().shake = true;
+        GameManagerPrefab.GetComponent<GameManganer>().swipe = true;
     }
 }
