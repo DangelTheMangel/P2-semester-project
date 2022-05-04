@@ -94,6 +94,7 @@ MonoBehaviour:
   turnSound: TurnSound
   footStep: Footstep
   hitWall: HitWall
+  bias: {x: 1.917078, y: 1.917078, z: 1.917078}
 --- !u!61 &515388278999643898
 BoxCollider2D:
   m_ObjectHideFlags: 0
