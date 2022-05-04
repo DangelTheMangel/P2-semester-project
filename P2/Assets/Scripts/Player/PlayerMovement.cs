@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 bias;
 
     [Header("Debug stuff")]
-    Text debugDisplay;
+    public Text debugDisplay;
 
     private void Awake()
     {
