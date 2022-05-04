@@ -31,6 +31,23 @@ public class InputManage : MonoBehaviour
     float lowPassKernelWidthInSeconds = 1.0f;
     float lowPassFilterFactor;
 
+
+    [Header("tildeControls")]
+    [SerializeField]
+    public float readDataEverFrame = 5;
+    [SerializeField]
+    List<Vector3> rotationRateList = new List<Vector3>();
+    [SerializeField]
+    Vector3 rotationRate = Vector3.zero;
+    [SerializeField]
+    public Vector2 maxInputTimer = new Vector2(0.5f,0.7f);
+    [SerializeField]
+    public float inputTimer = 0.5f;
+    [SerializeField]
+    public bool isInput = false;
+    public bool userInput = true;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -48,15 +65,15 @@ public class InputManage : MonoBehaviour
             gyroEnable = gyroscope.enabled;
         }
         playerController = new PlayerController();
-        
+
     }
 
-    
-    
+
+
     private void OnEnable()
     {
-        if(playerController != null)
-        playerController.Enable();
+        if (playerController != null)
+            playerController.Enable();
     }
 
     private void OnDisable()
@@ -83,6 +100,10 @@ public class InputManage : MonoBehaviour
         return Input.acceleration;
     }
 
+    public Quaternion getPhoneRotation()
+    {
+        return gyroscope.attitude;
+    }
     private void endTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (onEndTouch != null)
@@ -106,5 +127,61 @@ public class InputManage : MonoBehaviour
         return utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
     }
 
+    private void Update()
+    {
+        if (Time.frameCount % readDataEverFrame == 0)
+        {
+            rotationRate = calulateRotationRateMean(rotationRateList);
+            rotationRateList.Clear();
+        }
+        else
+        {
+            rotationRateList.Add(gyroscope.rotationRateUnbiased);
+        }
+    }
 
+    public Vector3 getRotationRate() {
+        return rotationRate;
+    }
+
+    public Vector3 calulateRotationRateMean(List<Vector3> rotationRate)
+    {
+        Vector3 meanVector = Vector3.zero;
+        for (int i = 0; i < rotationRate.Count; i++)
+        {
+            meanVector = new Vector3(meanVector.x + rotationRate[i].x, meanVector.y + rotationRate[i].y, meanVector.z + rotationRate[i].z);
+        }
+        meanVector = new Vector3((float)meanVector.x / rotationRate.Count, meanVector.y / rotationRate.Count, meanVector.z / rotationRate.Count);
+        return meanVector;
+    }
+
+    public int getTiledAxis(float rotationRateValue, float Bias, float phoneRotationAxes , float timer)
+    {
+        if (rotationRateValue < Bias && rotationRateValue > -Bias)
+        {
+            return 0;
+
+        }
+        else
+        {
+            if (rotationRateValue > Bias && !isInput && phoneRotationAxes < 0 && inputTimer <= 0)
+            {
+                isInput = true;
+                userInput = false;
+                inputTimer = timer;
+                return 1;
+            }
+            if (rotationRateValue > Bias && !isInput && phoneRotationAxes > 0 && inputTimer <= 0)
+            {
+                isInput = true;
+                userInput = false;
+                inputTimer = timer;
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
 }

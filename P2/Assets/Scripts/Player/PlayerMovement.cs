@@ -1,9 +1,11 @@
 //based on https://youtu.be/mbzXIOKZurA
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,6 +37,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string turnSound = "TurnSound";
     [SerializeField] private string footStep = "Footstep";
     [SerializeField] private string hitWall = "HitWall";
+
+    [Header("tildeControls")]
+    [SerializeField]
+    Vector3 bias;
+
+    [Header("Debug stuff")]
+    public Text debugDisplay;
+
     private void Awake()
     {
         //new
@@ -78,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("detectSwipe" + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance));
-        if (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+        if (GameManganer.Instance.swipe && Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance)
         {
             Debug.DrawLine(startPosition, endPosition, Color.blue, 5f);
@@ -160,6 +170,80 @@ public class PlayerMovement : MonoBehaviour
         {
             PAC.MovementCheck();
         }
+        if (!GameManganer.Instance.swipe) {
+            detectTilde();
+        }
+        WASDMovementChecker();
+        updateDebugText();
+    }
+
+    private void detectTilde()
+    {
+        updateDebugText();
+        Vector3 rotationRate = inputManager.getRotationRate();
+        Quaternion phoneRotation = inputManager.getPhoneRotation();
+        int xAxis = inputManager.getTiledAxis(rotationRate.x, bias.x, phoneRotation.x, inputManager.maxInputTimer.x);
+        int yAxis = inputManager.getTiledAxis(rotationRate.y, bias.y, phoneRotation.y,inputManager.maxInputTimer.y);
+
+        if (inputManager.inputTimer > 0)
+        {
+            inputManager.inputTimer -= Time.deltaTime;
+        }
+        else
+        {
+            inputManager.isInput = false;
+        }
+
+        
+            tildeDirection(xAxis, yAxis);
+        
+    }
+    public void updateDebugText() {
+        if (debugDisplay != null) {
+            debugDisplay.text = "Timer: " + inputManager.inputTimer + "\n Bias: " + bias + "\nMax timers on x: " + inputManager.maxInputTimer.x + "\nMax timers on y: " + inputManager.maxInputTimer.y;
+        }    
+
+    }
+
+
+    /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// //////
+
+    public void ChangeBiasX(float value)
+    {
+        bias.x = value;
+    }
+
+    public void ChangeBiasY(float value)
+    {
+        bias.y = value;
+    }
+
+    public void ChangeTimerX(float value)
+    {
+        inputManager.maxInputTimer.x = value;
+    }
+
+    public void ChangeTimerY(float value)
+    {
+        inputManager.maxInputTimer.y = value;
+    }
+    /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// //////
+
+    private void tildeDirection(int forwardAxis, int rotateAxis)
+    {
+        inputManager.userInput = true;
+        if (forwardAxis > 0)
+        {
+            moveplayer();
+        }else if (rotateAxis != 0)
+        {
+            rotatePlayer(-rotateAxis);
+        }
+
+    }
+
+    private void WASDMovementChecker()
+    {
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
             //if the button are pressed and the button wasnt pressed last frame rotate
@@ -173,17 +257,16 @@ public class PlayerMovement : MonoBehaviour
                 SoundManager.instance.playEffect(gameObject, turnSound);
             }
             // if button was not pressed set that the button button wasnt pressed
-            else if(Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f) {
+            else if (Mathf.Abs(playerControls.Freemovement.Rotate.ReadValue<float>()) != 1f)
+            {
                 buttonRealse = true;
             }
-
             if (playerControls.Freemovement.Move.triggered)
             {
                 if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
                 {
                     movePoint.position += moveVector;
                     SoundManager.instance.playEffect(gameObject, footStep);
-                    
                 }
                 else
                 {
@@ -191,8 +274,10 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-    //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
     }
+    
+    
+
 
     /// <summary>
     /// rotate radiant angle (+ PI/2) and convert to movement 

@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gyroEnable: 0
+  readDataEverFrame: 5
+  rotationRateList: []
+  rotationRate: {x: 0, y: 0, z: 0}
+  maxInputTimer: 0.5010335
+  inputTimer: 0.5010335
+  isInput: 0
+  userInput: 0

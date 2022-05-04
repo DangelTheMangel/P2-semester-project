@@ -32,6 +32,11 @@ public class ArrowEvent : Event
     float shakeDetectionThreshold = 2.0f;
     private void Start()
     {
+        if (isRandom)
+        {
+            reactionTimer = Random.Range(minTime, maxTime);
+        }
+
         shakeDetectionThreshold *= shakeDetectionThreshold;
         lowPassValue = Input.acceleration;
         //the inputsystem class begin intilsiset
@@ -52,10 +57,7 @@ public class ArrowEvent : Event
             }
         }
 
-        if (isRandom)
-        {
-            startReaction = Random.Range(minTime, maxTime);
-        }
+
     }
     public override void reaction()
     {
