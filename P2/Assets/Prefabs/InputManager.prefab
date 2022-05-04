@@ -47,6 +47,7 @@ MonoBehaviour:
   readDataEverFrame: 5
   rotationRateList: []
   rotationRate: {x: 0, y: 0, z: 0}
-  maxInputTimer: 1.010335
-  inputTimer: 1.010335
+  maxInputTimer: 0.5010335
+  inputTimer: 0.5010335
   isInput: 0
+  userInput: 0

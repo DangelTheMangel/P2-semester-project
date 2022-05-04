@@ -40,11 +40,12 @@ public class InputManage : MonoBehaviour
     [SerializeField]
     Vector3 rotationRate = Vector3.zero;
     [SerializeField]
-    float maxInputTimer = 0.5f;
+    public Vector2 maxInputTimer = new Vector2(0.5f,0.7f);
     [SerializeField]
-    float inputTimer = 0.5f;
+    public float inputTimer = 0.5f;
     [SerializeField]
-    bool isInput = false;
+    public bool isInput = false;
+    public bool userInput = true;
 
 
     private void Awake()
@@ -154,18 +155,10 @@ public class InputManage : MonoBehaviour
         return meanVector;
     }
 
-    public int getTiledAxis(float rotationRateValue, float Bias, float phoneRotationAxes)
+    public int getTiledAxis(float rotationRateValue, float Bias, float phoneRotationAxes , float timer)
     {
         if (rotationRateValue < Bias && rotationRateValue > -Bias)
         {
-            if (inputTimer > 0)
-            {
-                inputTimer -= Time.deltaTime;
-            }
-            else
-            {
-                isInput = false;
-            }
             return 0;
 
         }
@@ -174,13 +167,15 @@ public class InputManage : MonoBehaviour
             if (rotationRateValue > Bias && !isInput && phoneRotationAxes < 0 && inputTimer <= 0)
             {
                 isInput = true;
-                inputTimer = maxInputTimer;
+                userInput = false;
+                inputTimer = timer;
                 return 1;
             }
             if (rotationRateValue > Bias && !isInput && phoneRotationAxes > 0 && inputTimer <= 0)
             {
                 isInput = true;
-                inputTimer = maxInputTimer;
+                userInput = false;
+                inputTimer = timer;
                 return -1;
             }
             else

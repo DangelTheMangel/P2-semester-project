@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManganer : MonoBehaviour
 {
     public static GameManganer Instance;
+    public GameObject gameManagerPrefab;
     public SceneManganer sceneManganer;
     public int sceneOfDeath;
     public bool shake = false;
@@ -13,6 +14,7 @@ public class GameManganer : MonoBehaviour
     public PlayerMovement player;
     private void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;

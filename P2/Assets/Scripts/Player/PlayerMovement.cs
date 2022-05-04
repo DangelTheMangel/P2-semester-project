@@ -42,8 +42,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Vector3 bias;
 
-    [Header("Debug")]
-    public Text debugDisplay;
+    [Header("Debug stuff")]
+    Text debugDisplay;
+
     private void Awake()
     {
         //new
@@ -178,28 +179,65 @@ public class PlayerMovement : MonoBehaviour
 
     private void detectTilde()
     {
+        updateDebugText();
         Vector3 rotationRate = inputManager.getRotationRate();
         Quaternion phoneRotation = inputManager.getPhoneRotation();
-        int xAxis = inputManager.getTiledAxis(rotationRate.x, bias.x, phoneRotation.x);
-        int yAxis = inputManager.getTiledAxis(rotationRate.y, bias.y, phoneRotation.y);
-        if (xAxis != 0 && yAxis != 0) {
-            tildeDirection(xAxis, yAxis);
+        int xAxis = inputManager.getTiledAxis(rotationRate.x, bias.x, phoneRotation.x, inputManager.maxInputTimer.x);
+        int yAxis = inputManager.getTiledAxis(rotationRate.y, bias.y, phoneRotation.y,inputManager.maxInputTimer.y);
+
+        if (inputManager.inputTimer > 0)
+        {
+            inputManager.inputTimer -= Time.deltaTime;
         }
+        else
+        {
+            inputManager.isInput = false;
+        }
+
+        
+            tildeDirection(xAxis, yAxis);
         
     }
     public void updateDebugText() {
-        debugDisplay.text = "swipe on: " + GameManganer.Instance.swipe;
+        if (debugDisplay != null) {
+            debugDisplay.text = "Timer: " + inputManager.inputTimer + "\n Bias: " + bias + "\nMax timers on x: " + inputManager.maxInputTimer.x + "\nMax timers on y: " + inputManager.maxInputTimer.y;
+        }    
+
     }
+
+
+    /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// //////
+
+    public void ChangeBiasX(float value)
+    {
+        bias.x = value;
+    }
+
+    public void ChangeBiasY(float value)
+    {
+        bias.y = value;
+    }
+
+    public void ChangeTimerX(float value)
+    {
+        inputManager.maxInputTimer.x = value;
+    }
+
+    public void ChangeTimerY(float value)
+    {
+        inputManager.maxInputTimer.y = value;
+    }
+    /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// ////// /// //////
+
     private void tildeDirection(int forwardAxis, int rotateAxis)
     {
+        inputManager.userInput = true;
         if (forwardAxis > 0)
         {
             moveplayer();
-        }
-
-        if (rotateAxis != 0)
+        }else if (rotateAxis != 0)
         {
-            rotatePlayer(rotateAxis);
+            rotatePlayer(-rotateAxis);
         }
 
     }

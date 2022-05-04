@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82846648396e72449b8df30848fb7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManagerPrefab: {fileID: 9071597736781253885}
   sceneManganer: {fileID: 0}
   sceneOfDeath: 0
   shake: 1
