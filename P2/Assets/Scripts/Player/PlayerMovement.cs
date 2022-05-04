@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -40,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("tildeControls")]
     [SerializeField]
     Vector3 bias;
+
+    [Header("Debug")]
+    public Text debugDisplay;
     private void Awake()
     {
         //new
@@ -166,18 +170,10 @@ public class PlayerMovement : MonoBehaviour
             PAC.MovementCheck();
         }
         if (!GameManganer.Instance.swipe) {
-        
-        }
-
-        if (!GameManganer.Instance.swipe) {
             detectTilde();
         }
-
         WASDMovementChecker();
-        
-
-
-    //UAP_AccessibilityManager.OnSwipe(ESDirection, 1);
+        updateDebugText();
     }
 
     private void detectTilde()
@@ -191,7 +187,9 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
+    public void updateDebugText() {
+        debugDisplay.text = "swipe on: " + GameManganer.Instance.swipe;
+    }
     private void tildeDirection(int forwardAxis, int rotateAxis)
     {
         if (forwardAxis > 0)
@@ -225,14 +223,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 buttonRealse = true;
             }
-
             if (playerControls.Freemovement.Move.triggered)
             {
                 if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
                 {
                     movePoint.position += moveVector;
                     SoundManager.instance.playEffect(gameObject, footStep);
-
                 }
                 else
                 {

@@ -46,4 +46,5 @@ MonoBehaviour:
   sceneManganer: {fileID: 0}
   sceneOfDeath: 0
   shake: 1
+  swipe: 0
   player: {fileID: 0}

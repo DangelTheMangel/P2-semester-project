@@ -16,7 +16,20 @@ public class ControlsEnabler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turnOn();
+        shakeOn = GameManagerPrefab.GetComponent<GameManganer>().swipe;
+        if (shakeOn)
+        {
+            shakeOn = false;
+            turnOff();
+            buttonTextObj.text = buttonText[1];
+
+        }
+        else
+        {
+            shakeOn = true;
+            turnOn();
+            buttonTextObj.text = buttonText[0];
+        }
     }
 
 
