@@ -419,7 +419,7 @@ MonoBehaviour:
   horizontalSpacing: 1
   heightAboveFloor: 1.5
   asset: {fileID: 11400000, guid: 2533d7dd7387c784eaf3b697c66a9d93, type: 2}
-  probeDataSize: 566880
+  probeDataSize: 2989632
   mProbeSpheres:
   - center:
       x: -0.5
@@ -1004,6 +1004,61 @@ MonoBehaviour:
           z: 0
         radius: 0
     dataSize: 538722
+  - gameObject: {fileID: 1850497221}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 5
+          y: 4
+          z: -1
+        radius: 1000
+    dataSize: 538722
+  - gameObject: {fileID: 1850497221}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 5
+          y: 4
+          z: -1
+        radius: 10
+    dataSize: 538722
+  - gameObject: {fileID: 2080978949}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 7
+          y: 11
+          z: -1
+        radius: 1000
+    dataSize: 538722
+  - gameObject: {fileID: 1805499639}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 9
+          y: 25
+          z: -1
+        radius: 1000
+    dataSize: 538722
+  - gameObject: {fileID: 1805499639}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 9
+          y: 25
+          z: -1
+        radius: 20
+    dataSize: 259800
 --- !u!1 &739444346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,6 +3820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1167995424880748251, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167995424880748260, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -3772,6 +3831,18 @@ PrefabInstance:
     - target: {fileID: 1167995424880748260, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995424880748263, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425306899673, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425306899684, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: influenceRadius
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1167995425306899686, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3781,6 +3852,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mTotalDataSize
+      value: 615790
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: influenceRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: useAllProbeBatches
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mProbeDataSizes.Array.data[0]
+      value: 77068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mProbeDataSizes.Array.data[1]
+      value: 538722
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mProbeBatchesUsed.Array.data[0]
+      value: 
+      objectReference: {fileID: 1928235141}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mProbeBatchesUsed.Array.data[1]
+      value: 
+      objectReference: {fileID: 731292229}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mIdentifier.endpointInfluence.radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mIdentifier.endpointInfluence.center.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: mIdentifier.endpointInfluence.center.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1167995425433636084, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -3788,6 +3899,18 @@ PrefabInstance:
     - target: {fileID: 1167995425433636084, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636085, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636085, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: transmission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167995425433636085, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: useDistanceCurveForReflections
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1167995425729592996, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_Name
@@ -3948,6 +4071,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 716858526894506076, guid: f9c50b1b88261c047b4db716e7978ed9, type: 3}
   m_PrefabInstance: {fileID: 1757248863}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1805499639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1167995425306899673, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+  m_PrefabInstance: {fileID: 1579496899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1813735634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4025,6 +4153,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 515388279906850173, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
   m_PrefabInstance: {fileID: 1813735634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1850497221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1167995425433636087, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+  m_PrefabInstance: {fileID: 1579496899}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1892400163
 GameObject:
@@ -4173,7 +4306,7 @@ MonoBehaviour:
   horizontalSpacing: 1
   heightAboveFloor: 1.5
   asset: {fileID: 11400000, guid: 87bcbc08389e2f043ab4cbb200cecd42, type: 2}
-  probeDataSize: 622428
+  probeDataSize: 3055076
   mProbeSpheres:
   - center:
       x: 4.5
@@ -4808,6 +4941,61 @@ MonoBehaviour:
           z: 0
         radius: 0
     dataSize: 586822
+  - gameObject: {fileID: 1850497221}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 5
+          y: 4
+          z: -1
+        radius: 1000
+    dataSize: 586822
+  - gameObject: {fileID: 1850497221}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 5
+          y: 4
+          z: -1
+        radius: 10
+    dataSize: 77068
+  - gameObject: {fileID: 2080978949}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 7
+          y: 11
+          z: -1
+        radius: 1000
+    dataSize: 586822
+  - gameObject: {fileID: 1805499639}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 9
+          y: 25
+          z: -1
+        radius: 1000
+    dataSize: 586822
+  - gameObject: {fileID: 1805499639}
+    identifier:
+      type: 0
+      variation: 1
+      endpointInfluence:
+        center:
+          x: 9
+          y: 25
+          z: -1
+        radius: 20
+    dataSize: 586822
 --- !u!1 &2051080804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +5078,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2080978949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1167995424880748251, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+  m_PrefabInstance: {fileID: 1579496899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097488035
 GameObject:
   m_ObjectHideFlags: 0
