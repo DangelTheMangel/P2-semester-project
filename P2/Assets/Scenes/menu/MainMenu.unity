@@ -315,7 +315,7 @@ MonoBehaviour:
   shakeOn: 1
   buttonText:
   - Swipe movement
-  - Tildet movement
+  - Tilted movement
   buttonTextObj: {fileID: 1956013384}
   GameManagerPrefab: {fileID: 9071597736781253885, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
 --- !u!4 &487699324
@@ -2016,8 +2016,8 @@ MonoBehaviour:
   audioOff: {fileID: 8300000, guid: 23af585f014dae7489f4926f454ce4d1, type: 3}
   vocielineOn: 1
   buttonText:
-  - Vocieline On
-  - Vocieline Off
+  - Voiceline On
+  - Voiceline Off
   buttonTextObj: {fileID: 523617712}
 --- !u!4 &2059784902
 Transform:
