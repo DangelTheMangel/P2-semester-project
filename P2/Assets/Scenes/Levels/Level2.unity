@@ -225,11 +225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853317079127519031, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: m_Volume
-      value: 0.04
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2242704818036618138, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
-      propertyPath: Pan2D
-      value: 1
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: useAllProbeBatches
