@@ -95,6 +95,7 @@ MonoBehaviour:
   footStep: Footstep
   hitWall: HitWall
   bias: {x: 1.917078, y: 1.917078, z: 1.917078}
+  debugDisplay: {fileID: 0}
 --- !u!61 &515388278999643898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -666,6 +667,7 @@ GameObject:
   - component: {fileID: 515388279906850170}
   - component: {fileID: 515388279906850171}
   - component: {fileID: 515388279906850169}
+  - component: {fileID: 6436371097789727600}
   m_Layer: 0
   m_Name: Player sprite
   m_TagString: Untagged
@@ -766,3 +768,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6436371097789727600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515388279906850173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd9ebf1401392e4bbd47fea32f47642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBakedListener: {fileID: 0}
+  applyReverb: 1
+  reverbType: 1
+  useAllProbeBatches: 1
+  probeBatches: []
+  mTotalDataSize: 298224
+  mProbeDataSizes: a22c01004e600300
+  mIdentifier:
+    type: 0
+    variation: 0
+    endpointInfluence:
+      center:
+        x: 0
+        y: 0
+        z: 0
+      radius: 0
+  mProbeBatchesUsed:
+  - {fileID: 0}
+  - {fileID: 0}

@@ -3475,6 +3475,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -6145373312604699487, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: mProbeBatchesUsed.Array.data[0]
+      value: 
+      objectReference: {fileID: 1307669969}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: mProbeBatchesUsed.Array.data[1]
+      value: 
+      objectReference: {fileID: 1854272484}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
 --- !u!1 &515388278580006744 stripped
@@ -3482,37 +3490,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 515388279906850173, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
   m_PrefabInstance: {fileID: 515388278580006743}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &515388278580006746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515388278580006744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd9ebf1401392e4bbd47fea32f47642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentBakedListener: {fileID: 0}
-  applyReverb: 1
-  reverbType: 1
-  useAllProbeBatches: 1
-  probeBatches: []
-  mTotalDataSize: 298224
-  mProbeDataSizes: a22c01004e600300
-  mIdentifier:
-    type: 0
-    variation: 0
-    endpointInfluence:
-      center:
-        x: 0
-        y: 0
-        z: 0
-      radius: 0
-  mProbeBatchesUsed:
-  - {fileID: 1307669969}
-  - {fileID: 1854272484}
 --- !u!1001 &1167995425567334726
 PrefabInstance:
   m_ObjectHideFlags: 0
