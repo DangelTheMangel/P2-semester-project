@@ -123,16 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &142093745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1167995425433636087, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
-  m_PrefabInstance: {fileID: 1167995425567334726}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &277484959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1167995425306899673, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
-  m_PrefabInstance: {fileID: 1167995425567334726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &357748501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,6 +479,128 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &826031027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826031029}
+  - component: {fileID: 826031028}
+  m_Layer: 0
+  m_Name: Audio probe 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &826031028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826031027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286962cac82a4fa4e9ec38ab663c9578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placementStrategy: 1
+  horizontalSpacing: 1
+  heightAboveFloor: 0.5
+  asset: {fileID: 11400000, guid: 67dc2cb1dd0afd94e9138bcd6d6e12e6, type: 2}
+  probeDataSize: 49024
+  mProbeSpheres:
+  - center:
+      x: 0.5
+      y: 1
+      z: -0.5
+    radius: 1
+  - center:
+      x: 0.5
+      y: 1
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: 1
+      z: -0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: 1
+      z: 0.5
+    radius: 1
+  - center:
+      x: 2.5
+      y: 1
+      z: -0.5
+    radius: 1
+  - center:
+      x: 2.5
+      y: 1
+      z: 0.5
+    radius: 1
+  - center:
+      x: 3.5
+      y: 1
+      z: -0.5
+    radius: 1
+  - center:
+      x: 3.5
+      y: 1
+      z: 0.5
+    radius: 1
+  - center:
+      x: 4.5
+      y: 1
+      z: -0.5
+    radius: 1
+  - center:
+      x: 4.5
+      y: 1
+      z: 0.5
+    radius: 1
+  mBakedDataLayerInfo:
+  - gameObject: {fileID: 826031027}
+    identifier:
+      type: 1
+      variation: 3
+      endpointInfluence:
+        center:
+          x: 0
+          y: 0
+          z: 0
+        radius: 0
+    dataSize: 240
+  - gameObject: {fileID: 515388278580006744}
+    identifier:
+      type: 0
+      variation: 0
+      endpointInfluence:
+        center:
+          x: 0
+          y: 0
+          z: 0
+        radius: 0
+    dataSize: 48102
+--- !u!4 &826031029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826031027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5, y: 1, z: 0}
+  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1197086975}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841943794
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,11 +939,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &930383773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1167995424880748251, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
-  m_PrefabInstance: {fileID: 1167995425567334726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947778289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1387,7 @@ Transform:
   m_Children:
   - {fileID: 1307669970}
   - {fileID: 1854272483}
+  - {fileID: 826031029}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1375,88 +1483,108 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementStrategy: 1
   horizontalSpacing: 1
-  heightAboveFloor: 1.5
+  heightAboveFloor: 0.8
   asset: {fileID: 11400000, guid: 67dc2cb1dd0afd94e9138bcd6d6e12e6, type: 2}
-  probeDataSize: 309780
+  probeDataSize: 49024
   mProbeSpheres:
   - center:
-      x: 0
-      y: 2
+      x: 0.5
+      y: 1.3
       z: -0.5
     radius: 1
   - center:
-      x: 0
-      y: 0
+      x: 0.5
+      y: 0.3
       z: -0.5
     radius: 1
   - center:
-      x: 0
-      y: -2
+      x: 0.5
+      y: -0.7
       z: -0.5
     radius: 1
   - center:
-      x: 0
-      y: 2
+      x: 0.5
+      y: -1.7
+      z: -0.5
+    radius: 1
+  - center:
+      x: 0.5
+      y: -2.7
+      z: -0.5
+    radius: 1
+  - center:
+      x: 0.5
+      y: 1.3
       z: 0.5
     radius: 1
   - center:
-      x: 0
-      y: 0
+      x: 0.5
+      y: 0.3
       z: 0.5
     radius: 1
   - center:
-      x: 0
-      y: -2
+      x: 0.5
+      y: -0.7
       z: 0.5
     radius: 1
   - center:
-      x: 1
-      y: -2
+      x: 0.5
+      y: -1.7
+      z: 0.5
+    radius: 1
+  - center:
+      x: 0.5
+      y: -2.7
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: 1.3
       z: -0.5
     radius: 1
   - center:
-      x: 1
-      y: -2
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2
-      y: 2
+      x: 1.5
+      y: 0.3
       z: -0.5
     radius: 1
   - center:
-      x: 2
-      y: 0
+      x: 1.5
+      y: -0.7
       z: -0.5
     radius: 1
   - center:
-      x: 2
-      y: -2
+      x: 1.5
+      y: -1.7
       z: -0.5
     radius: 1
   - center:
-      x: 2
-      y: 2
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2
-      y: 0
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2
-      y: -2
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2.9999998
-      y: 2
+      x: 1.5
+      y: -2.7
       z: -0.5
     radius: 1
   - center:
-      x: 2.9999998
-      y: 2
+      x: 1.5
+      y: 1.3
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: 0.3
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: -0.7
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: -1.7
+      z: 0.5
+    radius: 1
+  - center:
+      x: 1.5
+      y: -2.7
       z: 0.5
     radius: 1
   mBakedDataLayerInfo:
@@ -1470,40 +1598,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 100
-  - gameObject: {fileID: 142093745}
-    identifier:
-      type: 0
-      variation: 1
-      endpointInfluence:
-        center:
-          x: 2
-          y: 1
-          z: -1
-        radius: 1000
-    dataSize: 76962
-  - gameObject: {fileID: 277484959}
-    identifier:
-      type: 0
-      variation: 1
-      endpointInfluence:
-        center:
-          x: 5
-          y: 9
-          z: -1
-        radius: 1000
-    dataSize: 76962
-  - gameObject: {fileID: 930383773}
-    identifier:
-      type: 0
-      variation: 1
-      endpointInfluence:
-        center:
-          x: 4
-          y: 4
-          z: -1
-        radius: 1000
-    dataSize: 76962
+    dataSize: 240
   - gameObject: {fileID: 515388278580006744}
     identifier:
       type: 0
@@ -1514,7 +1609,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 76962
+    dataSize: 48102
 --- !u!4 &1307669970
 Transform:
   m_ObjectHideFlags: 0
@@ -1524,7 +1619,7 @@ Transform:
   m_GameObject: {fileID: 1307669968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -1, z: 0}
-  m_LocalScale: {x: 4.07, y: 6.08, z: 1}
+  m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1197086975}
   m_RootOrder: 0
@@ -1953,8 +2048,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854272482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 5, z: 0}
-  m_LocalScale: {x: 4.93, y: 10.11, z: 1}
+  m_LocalPosition: {x: 4.5, y: 5.5, z: 0}
+  m_LocalScale: {x: 2, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1197086975}
   m_RootOrder: 1
@@ -1973,238 +2068,158 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementStrategy: 1
   horizontalSpacing: 1
-  heightAboveFloor: 1.5
+  heightAboveFloor: 1
   asset: {fileID: 11400000, guid: ff46f5c18d4ae544e9b69501a5bdcfae, type: 2}
-  probeDataSize: 223840
+  probeDataSize: 146128
   mProbeSpheres:
   - center:
-      x: 2.5
-      y: 7
-      z: -0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 5
-      z: -0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 3
-      z: -0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 1
-      z: -0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 7
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 5
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 3
-      z: 0.5
-    radius: 1
-  - center:
-      x: 2.5
-      y: 1
-      z: 0.5
-    radius: 1
-  - center:
       x: 3.5
-      y: 10
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 8
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 6
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 4
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 1.9999999
+      y: 1.4999999
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 10
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 8
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 6
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 4
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 1.9999999
+      y: 1.4999999
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 10
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 8
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 6
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 4
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 1.9999999
+      y: 1.4999999
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 10
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 8
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 6
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 4
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 1.9999999
+      y: 1.4999999
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 10
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 8
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 6
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 4
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 1.9999999
+      y: 1.4999999
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 10
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 8
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 6
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 4
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 1.9999999
-      z: 0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 10
-      z: -0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 8
-      z: -0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 6
-      z: -0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 4
-      z: -0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 10
-      z: 0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 8
-      z: 0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 6
-      z: 0.5
-    radius: 1
-  - center:
-      x: 6.5
-      y: 4
+      y: 1.4999999
       z: 0.5
     radius: 1
   mBakedDataLayerInfo:
@@ -2218,7 +2233,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 344
+    dataSize: 280
   - gameObject: {fileID: 515388278580006744}
     identifier:
       type: 0
@@ -2229,7 +2244,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 221262
+    dataSize: 144302
 --- !u!1001 &2024852083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3475,6 +3490,26 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -6145373312604699487, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: useAllProbeBatches
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: probeBatches.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: probeBatches.Array.data[0]
+      value: 
+      objectReference: {fileID: 1307669969}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: probeBatches.Array.data[1]
+      value: 
+      objectReference: {fileID: 1854272484}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: probeBatches.Array.data[2]
+      value: 
+      objectReference: {fileID: 826031028}
     - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: mProbeBatchesUsed.Array.data[0]
       value: 
