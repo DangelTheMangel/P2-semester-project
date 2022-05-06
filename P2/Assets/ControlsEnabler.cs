@@ -30,6 +30,7 @@ public class ControlsEnabler : MonoBehaviour
             turnOn();
             buttonTextObj.text = buttonText[0];
         }
+        Debug.LogWarning("shakeOn:" + shakeOn);
     }
 
 
@@ -51,10 +52,10 @@ public class ControlsEnabler : MonoBehaviour
     }
     public void turnOff()
     {
-        GameManagerPrefab.GetComponent<GameManganer>().swipe = false;
+        GameManganer.Instance.swipe = false;
     }
     public void turnOn()
     {
-        GameManagerPrefab.GetComponent<GameManganer>().swipe = true;
+        GameManganer.Instance.swipe = true;
     }
 }

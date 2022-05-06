@@ -86,8 +86,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void detectSwipe()
     {
-        Debug.Log("detectSwipe" + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
-            (endTime - startTime) <= maximumDistance));
+        Debug.LogWarning("detectSwipe " + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+            (endTime - startTime) <= maximumDistance)  + " swipe on: " + GameManganer.Instance.swipe);
         if (GameManganer.Instance.swipe && Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance)
         {
