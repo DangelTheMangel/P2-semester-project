@@ -417,568 +417,608 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementStrategy: 1
   horizontalSpacing: 1
-  heightAboveFloor: 1.5
+  heightAboveFloor: 1
   asset: {fileID: 11400000, guid: 2533d7dd7387c784eaf3b697c66a9d93, type: 2}
-  probeDataSize: 2989632
+  probeDataSize: 2052704
   mProbeSpheres:
   - center:
       x: -0.5
-      y: 4
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: -0.5
-      y: 2
+      y: 1.5
       z: -0.5
     radius: 1
   - center:
       x: -0.5
-      y: 0
+      y: -0.5
       z: -0.5
     radius: 1
   - center:
       x: -0.5
-      y: -2
+      y: -2.5
       z: -0.5
     radius: 1
   - center:
       x: -0.5
-      y: 4
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: -0.5
-      y: 2
+      y: 1.5
       z: 0.5
     radius: 1
   - center:
       x: -0.5
-      y: 0
+      y: -0.5
       z: 0.5
     radius: 1
   - center:
       x: -0.5
-      y: -2
+      y: -2.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 3
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 1
+      y: 1.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: -1
+      y: -0.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: -3
+      y: -2.5
       z: -0.5
     radius: 1
   - center:
       x: 0.5
-      y: 11
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 5
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 3
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: 1
+      y: 1.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: -1
+      y: -0.5
       z: 0.5
     radius: 1
   - center:
       x: 0.5
-      y: -3
+      y: -2.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 3
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 1
+      y: 1.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: -1
+      y: -0.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: -3
+      y: -2.5
       z: -0.5
     radius: 1
   - center:
       x: 1.5
-      y: 11
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 5
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 3
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: 1
+      y: 1.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: -1
+      y: -0.5
       z: 0.5
     radius: 1
   - center:
       x: 1.5
-      y: -3
+      y: -2.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 3
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 1
+      y: 1.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: -1
+      y: -0.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: -3
+      y: -2.5
       z: -0.5
     radius: 1
   - center:
       x: 2.5
-      y: 11
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 5
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 3
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: 1
+      y: 1.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: -1
+      y: -0.5
       z: 0.5
     radius: 1
   - center:
       x: 2.5
-      y: -3
+      y: -2.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 3
+      y: 3.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 1
+      y: 1.5
       z: -0.5
     radius: 1
   - center:
       x: 3.5
-      y: 11
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 5
+      y: 5.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 3
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 3.5
-      y: 1
+      y: 1.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 7
+      y: 6.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 5
+      y: 4.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 3
+      y: 2.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 1
+      y: 0.5
       z: -0.5
     radius: 1
   - center:
       x: 4.5
-      y: 11
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 7
+      y: 6.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 5
+      y: 4.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 3
+      y: 2.5
       z: 0.5
     radius: 1
   - center:
       x: 4.5
-      y: 1
+      y: 0.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 5.5
-      y: 11
+      y: 3.5
+      z: -0.5
+    radius: 1
+  - center:
+      x: 5.5
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 5.5
-      y: 5
+      y: 5.5
+      z: 0.5
+    radius: 1
+  - center:
+      x: 5.5
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 6.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 6.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 6.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 6.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 6.5
-      y: 11
+      y: 3.5
+      z: -0.5
+    radius: 1
+  - center:
+      x: 6.5
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 6.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 6.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 6.5
-      y: 5
+      y: 5.5
+      z: 0.5
+    radius: 1
+  - center:
+      x: 6.5
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 7.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 7.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 7.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 7.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 7.5
-      y: 11
+      y: 3.5
+      z: -0.5
+    radius: 1
+  - center:
+      x: 7.5
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 7.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 7.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 7.5
-      y: 5
+      y: 5.5
+      z: 0.5
+    radius: 1
+  - center:
+      x: 7.5
+      y: 3.5
       z: 0.5
     radius: 1
   - center:
       x: 8.5
-      y: 11
+      y: 11.5
       z: -0.5
     radius: 1
   - center:
       x: 8.5
-      y: 9
+      y: 9.5
       z: -0.5
     radius: 1
   - center:
       x: 8.5
-      y: 7
+      y: 7.5
       z: -0.5
     radius: 1
   - center:
       x: 8.5
-      y: 5
+      y: 5.5
       z: -0.5
     radius: 1
   - center:
       x: 8.5
-      y: 11
+      y: 3.5
+      z: -0.5
+    radius: 1
+  - center:
+      x: 8.5
+      y: 11.5
       z: 0.5
     radius: 1
   - center:
       x: 8.5
-      y: 9
+      y: 9.5
       z: 0.5
     radius: 1
   - center:
       x: 8.5
-      y: 7
+      y: 7.5
       z: 0.5
     radius: 1
   - center:
       x: 8.5
-      y: 5
+      y: 5.5
+      z: 0.5
+    radius: 1
+  - center:
+      x: 8.5
+      y: 3.5
       z: 0.5
     radius: 1
   mBakedDataLayerInfo:
@@ -992,7 +1032,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 23116
+    dataSize: 12472
   - gameObject: {fileID: 1813735635}
     identifier:
       type: 0
@@ -1003,18 +1043,7 @@ MonoBehaviour:
           y: 0
           z: 0
         radius: 0
-    dataSize: 538722
-  - gameObject: {fileID: 1850497221}
-    identifier:
-      type: 0
-      variation: 1
-      endpointInfluence:
-        center:
-          x: 5
-          y: 4
-          z: -1
-        radius: 1000
-    dataSize: 538722
+    dataSize: 577202
   - gameObject: {fileID: 1850497221}
     identifier:
       type: 0
@@ -1025,7 +1054,7 @@ MonoBehaviour:
           y: 4
           z: -1
         radius: 10
-    dataSize: 538722
+    dataSize: 577202
   - gameObject: {fileID: 2080978949}
     identifier:
       type: 0
@@ -1036,18 +1065,7 @@ MonoBehaviour:
           y: 11
           z: -1
         radius: 1000
-    dataSize: 538722
-  - gameObject: {fileID: 1805499639}
-    identifier:
-      type: 0
-      variation: 1
-      endpointInfluence:
-        center:
-          x: 9
-          y: 25
-          z: -1
-        radius: 1000
-    dataSize: 538722
+    dataSize: 577202
   - gameObject: {fileID: 1805499639}
     identifier:
       type: 0
@@ -1058,7 +1076,7 @@ MonoBehaviour:
           y: 25
           z: -1
         radius: 20
-    dataSize: 259800
+    dataSize: 298280
 --- !u!1 &739444346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,6 +4150,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: reverbType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436371097789727600, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: useAllProbeBatches
       value: 0
       objectReference: {fileID: 0}
@@ -4304,7 +4326,7 @@ MonoBehaviour:
   transmissionMid: 1
   transmissionHigh: 1
   directMixLevel: 1
-  reflections: 0
+  reflections: 1
   reflectionsType: 0
   useDistanceCurveForReflections: 0
   currentBakedSource: {fileID: 0}
@@ -4389,7 +4411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementStrategy: 1
   horizontalSpacing: 1
-  heightAboveFloor: 1.5
+  heightAboveFloor: 1
   asset: {fileID: 11400000, guid: 87bcbc08389e2f043ab4cbb200cecd42, type: 2}
   probeDataSize: 3055076
   mProbeSpheres:
@@ -5309,6 +5331,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7187276612510630528, guid: 45cfdcbcd195315409528db6e94eadca, type: 3}
+      propertyPath: MaxDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187276612510630528, guid: 45cfdcbcd195315409528db6e94eadca, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: 0.024549808
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187276612510630528, guid: 45cfdcbcd195315409528db6e94eadca, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0.5903926
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187276612510630528, guid: 45cfdcbcd195315409528db6e94eadca, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: 0.024549808
+      objectReference: {fileID: 0}
     - target: {fileID: 8822618701948058737, guid: 45cfdcbcd195315409528db6e94eadca, type: 3}
       propertyPath: m_RootOrder
       value: 5
