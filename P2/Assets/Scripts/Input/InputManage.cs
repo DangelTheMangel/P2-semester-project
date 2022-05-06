@@ -47,6 +47,8 @@ public class InputManage : MonoBehaviour
     public bool isInput = false;
     public bool userInput = true;
 
+    public bool mOverm = true;
+
 
     private void Awake()
     {
@@ -131,7 +133,10 @@ public class InputManage : MonoBehaviour
     {
         if (Time.frameCount % readDataEverFrame == 0)
         {
-            rotationRate = calulateRotationRateMean(rotationRateList);
+            if (mOverm)
+                rotationRate = calulateRotationRateMean(rotationRateList);
+            else
+                rotationRate = rotationRateList[(int)(rotationRateList.Count-1)];
             rotationRateList.Clear();
         }
         else
