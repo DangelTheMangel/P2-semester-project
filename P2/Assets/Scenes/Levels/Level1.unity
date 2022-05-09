@@ -1888,6 +1888,7 @@ MonoBehaviour:
   turnSound: TurnSound
   footStep: Footstep
   hitWall: HitWall
+  isMoving: 0
   bias: {x: 0, y: 0, z: 0}
   debugDisplay: {fileID: 0}
 --- !u!4 &1439127546

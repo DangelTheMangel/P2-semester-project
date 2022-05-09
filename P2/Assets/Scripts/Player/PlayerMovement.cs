@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string turnSound = "TurnSound";
     [SerializeField] private string footStep = "Footstep";
     [SerializeField] private string hitWall = "HitWall";
+    [SerializeField] bool isMoving = false;
+    Rigidbody2D rigidBody;
 
     [Header("tildeControls")]
     [SerializeField]
@@ -87,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     private void detectSwipe()
     {
         Debug.LogWarning("detectSwipe " + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
-            (endTime - startTime) <= maximumDistance)  + " swipe on: " + GameManganer.Instance.swipe);
+            (endTime - startTime) <= maximumDistance) + " swipe on: " + GameManganer.Instance.swipe);
         if (GameManganer.Instance.swipe && Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance)
         {
@@ -134,7 +136,8 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.instance.playEffect(gameObject, turnSound);
     }
 
-    void moveplayer() {
+    void moveplayer()
+    {
         if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
         {
             movePoint.position += moveVector;
@@ -154,11 +157,24 @@ public class PlayerMovement : MonoBehaviour
         movePoint.parent = null;
         playerControls.Freemovement.Rotate.performed += Rotate;
         PAC = GetComponent<PlayerAudioControler>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
     private void Rotate(InputAction.CallbackContext context)
     {
         Debug.Log("Rotate");
     }
+    /*
+    private IEnumerable CheckMoving()
+    {
+        Vector3 startPos = transform.position;
+        yield return new WaitForSeconds(1f);
+        Vector3 finalPos = transform.position;
+
+        if (startPos.x != finalPos.x || startPos.y != finalPos.y || startPos.z != finalPos.z)
+            isMoving = true;
+        Debug.Log(isMoving);
+    }
+    */
 
     /// <summary>
     /// Checks when horizontal or vertical input axis is 1 or -1. If true, it will move towards <see cref="movePoint"/>
