@@ -136,15 +136,12 @@ public class PlayerMovement : MonoBehaviour
             moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
             buttonRealse = false;
             PAC.MovementCheck();
-<<<<<<< Updated upstream
+
         }
         else
         {
             SoundManager.instance.playEffect(gameObject, hitWall);
             wallCollisionCount++;
-=======
-            SoundManager.instance.playEffect(gameObject, turnSound);
->>>>>>> Stashed changes
         }
     }
 
