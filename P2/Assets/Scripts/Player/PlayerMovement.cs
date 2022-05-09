@@ -194,9 +194,8 @@ public class PlayerMovement : MonoBehaviour
     {
         
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        if (isMoving &&transform.position == movePoint.position)
+        if (transform.position == movePoint.position)
         {
-
             PAC.MovementCheck();
             isMoving = false;
             Debug.Log(isMoving);
