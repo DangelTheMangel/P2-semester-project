@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string hitWall = "HitWall";
     [SerializeField] bool isMoving = false;
     Rigidbody2D rigidBody;
-
     [Header("tildeControls")]
     [SerializeField]
     Vector3 bias;
@@ -47,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Debug stuff")]
     public Text debugDisplay;
     public int wallCollisionCount;
+
+
 
     private void Awake()
     {
@@ -129,26 +130,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void rotatePlayer(float val) {
-        Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
-        transform.eulerAngles += new Vector3(0, 0, (-val * 90));
-        moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
-        buttonRealse = false;
-        PAC.MovementCheck();
-        SoundManager.instance.playEffect(gameObject, turnSound);
-    }
-
-    void moveplayer()
-    {
-        if (!Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
-        {
-            movePoint.position += moveVector;
-            SoundManager.instance.playEffect(gameObject, footStep);
+        if (!isMoving) {
+            Debug.Log(playerControls.Freemovement.Rotate.ReadValue<float>());
+            transform.eulerAngles += new Vector3(0, 0, (-val * 90));
+            moveVector = roatationToMovementVector(gameObject.transform.localRotation.ToEulerAngles().z);
+            buttonRealse = false;
             PAC.MovementCheck();
+<<<<<<< Updated upstream
         }
         else
         {
             SoundManager.instance.playEffect(gameObject, hitWall);
             wallCollisionCount++;
+=======
+            SoundManager.instance.playEffect(gameObject, turnSound);
+>>>>>>> Stashed changes
         }
     }
 
@@ -178,15 +174,35 @@ public class PlayerMovement : MonoBehaviour
     }
     */
 
+    void moveplayer()
+    {
+        if (!isMoving && !Physics2D.OverlapCircle(movePoint.position + moveVector, collisionCheckerSize, whatStopsMovement))
+        {
+            movePoint.position += moveVector;
+            SoundManager.instance.playEffect(gameObject, footStep);
+            PAC.MovementCheck();
+            isMoving = true;
+            Debug.Log(isMoving);
+        }
+        else if (!isMoving)
+        {
+            SoundManager.instance.playEffect(gameObject, hitWall);
+        }
+    }
+
     /// <summary>
     /// Checks when horizontal or vertical input axis is 1 or -1. If true, it will move towards <see cref="movePoint"/>
     /// </summary>
     void Update()
     {
+        
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        if (transform.position == movePoint.position)
+        if (isMoving &&transform.position == movePoint.position)
         {
+
             PAC.MovementCheck();
+            isMoving = false;
+            Debug.Log(isMoving);
         }
         if (!GameManganer.Instance.swipe) {
             detectTilde();
@@ -207,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
         {
             inputManager.inputTimer -= Time.deltaTime;
         }
-        else
+        else if(rotationRate.x < bias.x)
         {
             inputManager.isInput = false;
         }
@@ -218,7 +234,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void updateDebugText() {
         if (debugDisplay != null) {
-            debugDisplay.text = "Timer: " + inputManager.inputTimer + "\n Bias: " + bias + "\nMax timers on x: " + inputManager.maxInputTimer.x + "\nMax timers on y: " + inputManager.maxInputTimer.y;
+            debugDisplay.text = "ismoving: " + isMoving;
         }    
 
     }
