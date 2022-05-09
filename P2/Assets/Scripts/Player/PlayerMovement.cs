@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Debug stuff")]
     public Text debugDisplay;
+    public int wallCollisionCount;
 
     private void Awake()
     {
@@ -147,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             SoundManager.instance.playEffect(gameObject, hitWall);
+            wallCollisionCount++;
         }
     }
 
