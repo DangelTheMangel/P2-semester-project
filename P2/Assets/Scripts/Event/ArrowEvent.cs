@@ -71,16 +71,14 @@ public class ArrowEvent : Event
         {
             return true;
         }
-        else
-        if (GameManganer.Instance.shake)
+        else if (reactionTimer < startplayerReaction)
         {
             return (shakePhone() && reactionTimer < startplayerReaction);
         }
-        else
-        {
-
+        else {
             return false;
         }
+
         
     }
     bool shakePhone() {
