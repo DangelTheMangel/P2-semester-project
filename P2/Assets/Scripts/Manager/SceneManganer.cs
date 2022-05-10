@@ -1,14 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManganer : MonoBehaviour
+
 {
+    public GameObject loadingScreen;
+    public Slider slider;
+
+    public void LoadLevel(string sceneIndex)
+    {
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+
+    IEnumerator LoadAsynchronously(string sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+
+            slider.value = progress;
+
+            yield return null;
+        }
+    }
     public List<string> sceneName = new List<string>();
+
+    internal static void LoadSceneAsync(int sceneIndex)
+    {
+        throw new NotImplementedException();
+    }
+
     public int levelIndex = 0;
     public static SceneManganer instance;
-
+    public float plus = 1;
     public bool changeScene = false;
     public void Awake()
     {
@@ -32,7 +64,7 @@ public class SceneManganer : MonoBehaviour
     }
 
     public void loadNextLevel() {
-        if (levelIndex + 1< sceneName.Count)
+        if (levelIndex + plus< sceneName.Count)
         {
             Debug.Log(levelIndex);
             levelIndex += 1;
@@ -51,6 +83,8 @@ public class SceneManganer : MonoBehaviour
 
     public void loadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        StartCoroutine(LoadAsynchronously(sceneName));
     }
+
+
 }

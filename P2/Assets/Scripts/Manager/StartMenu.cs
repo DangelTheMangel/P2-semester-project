@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public void Playgame()
+    public void Playgame(string scenename)
     {
         //Change Scene when pressing start
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManganer.Instance.sceneManganer.LoadLevel(scenename);
         //Or one where the name of the level is used to load (just remove //)
         //SceneManager.LoadScene("Test Level") ; 
     }
