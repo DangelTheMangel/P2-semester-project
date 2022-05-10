@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManganer : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameManganer : MonoBehaviour
     public double levelEndTime = 0;
     public string nameUser = "testUser";
     public dataCollector dataCollector;
+
+    public InputField userName;
     private void Awake()
     {
 
@@ -41,6 +44,16 @@ public class GameManganer : MonoBehaviour
     private void Start()
     {
         dataCollector = gameObject.GetComponent<dataCollector>();
+        userName.text = nameUser;
+    }
+
+    public void changeUserName() {
+        if (userName != null) {
+            nameUser = userName.text;
+        }
+        else {
+            nameUser = "username";
+        }
     }
 
     public void startTimer()
