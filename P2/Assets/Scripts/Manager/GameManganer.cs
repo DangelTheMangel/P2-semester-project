@@ -15,7 +15,7 @@ public class GameManganer : MonoBehaviour
     [SerializeField]
     bool disableUAP = false;
     public UAP_AccessibilityManager accessibilityManager;
-    public int deathCount;
+    public int deathCount = 0;
     [SerializeField]
     public double levelStartTime = 0;
     [SerializeField]

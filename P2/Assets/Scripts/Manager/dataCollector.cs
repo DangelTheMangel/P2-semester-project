@@ -10,9 +10,9 @@ public class dataCollector : MonoBehaviour
     void dataCollect() {
         string user = "";
         string level = "";
-        int deaths = 0;
-        int inputs = 0;
-        int hitwall = 0;
+        int deaths = GameManganer.Instance.deathCount;
+        int inputs = GameManganer.Instance.player.inputCount;
+        int hitwall = GameManganer.Instance.player.wallCollisionCount;
         double time = caculateTime();
         string row = user + "," + level + "," +inputs+","+hitwall+","+time;
     }
