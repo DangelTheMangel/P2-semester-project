@@ -15,6 +15,7 @@ public class GameManganer : MonoBehaviour
     [SerializeField]
     bool disableUAP = false;
     public UAP_AccessibilityManager accessibilityManager;
+    public int deathCount;
     private void Awake()
     {
 
@@ -36,6 +37,7 @@ public class GameManganer : MonoBehaviour
         sceneOfDeath = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene("GameOver");
         Debug.Log("Get Owned Loser");
+        deathCount++;
     }
 
     void disableIfNotMenu() {
