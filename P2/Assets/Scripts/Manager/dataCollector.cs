@@ -6,9 +6,14 @@ using UnityEngine;
 public class dataCollector : MonoBehaviour
 {
 
-    string filePath = "";
-    string[] headers;
-    void dataCollect() {
+    public string filePath = "";
+    public string[] headers;
+
+    private void Start()
+    {
+        filePath = Application.dataPath + filePath;
+    }
+    public void dataCollect() {
         string user = GameManganer.Instance.nameUser;
         string level = GameManganer.Instance.sceneManganer.sceneName[GameManganer.Instance.sceneManganer.levelIndex];
         int deaths = GameManganer.Instance.deathCount;
@@ -16,6 +21,7 @@ public class dataCollector : MonoBehaviour
         int hitwall = GameManganer.Instance.player.wallCollisionCount;
         double time = caculateTime();
         string row = user + "," + level + "," +inputs+","+hitwall+","+time;
+        Debug.Log(row);
         writeCSV(row);
     }
 

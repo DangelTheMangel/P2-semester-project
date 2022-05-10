@@ -64,8 +64,11 @@ public class SceneManganer : MonoBehaviour
     }
 
     public void loadNextLevel() {
+    
+        GameManganer.Instance.dataCollector.dataCollect();
         if (levelIndex + plus< sceneName.Count)
         {
+            
             Debug.Log(levelIndex);
             levelIndex += 1;
             SceneManager.LoadScene(sceneName[levelIndex], LoadSceneMode.Single);

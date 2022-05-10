@@ -21,6 +21,7 @@ public class GameManganer : MonoBehaviour
     [SerializeField]
     public double levelEndTime = 0;
     public string nameUser = "testUser";
+    public dataCollector dataCollector;
     private void Awake()
     {
 
@@ -39,7 +40,7 @@ public class GameManganer : MonoBehaviour
 
     private void Start()
     {
-        
+        dataCollector = gameObject.GetComponent<dataCollector>();
     }
 
     public void startTimer()
