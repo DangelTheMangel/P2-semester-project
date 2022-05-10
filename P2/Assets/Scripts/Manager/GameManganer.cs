@@ -20,6 +20,7 @@ public class GameManganer : MonoBehaviour
     public double levelStartTime = 0;
     [SerializeField]
     public double levelEndTime = 0;
+    public string nameUser = "testUser";
     private void Awake()
     {
 
@@ -114,5 +115,6 @@ public class GameManganer : MonoBehaviour
             }
         levelEndTime = Time.realtimeSinceStartupAsDouble;
     }
+
 
 }
