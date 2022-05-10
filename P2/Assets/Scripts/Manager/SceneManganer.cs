@@ -14,6 +14,7 @@ public class SceneManganer : MonoBehaviour
     public void LoadLevel(string sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
+        DontDestroyOnLoad(gameObject);
     }
 
     IEnumerator LoadAsynchronously(string sceneIndex)
