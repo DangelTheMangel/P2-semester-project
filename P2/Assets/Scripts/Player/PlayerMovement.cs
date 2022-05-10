@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Debug stuff")]
     public Text debugDisplay;
     public int wallCollisionCount;
-    public int swipesCount;
+    public int inputCount;
 
 
 
@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         endPosition = pos;
         endTime = time;
         detectSwipe();
+        inputCount++;
     }
 
     private void detectSwipe()
@@ -267,9 +268,11 @@ public class PlayerMovement : MonoBehaviour
         if (forwardAxis > 0)
         {
             moveplayer();
+            inputCount++;
         }else if (rotateAxis != 0)
         {
             rotatePlayer(-rotateAxis);
+            inputCount++;
         }
 
     }
