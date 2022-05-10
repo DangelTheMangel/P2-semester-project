@@ -16,6 +16,10 @@ public class GameManganer : MonoBehaviour
     bool disableUAP = false;
     public UAP_AccessibilityManager accessibilityManager;
     public int deathCount;
+    [SerializeField]
+    double levelStartTime = 0;
+    [SerializeField]
+    double levelEndTime = 0;
     private void Awake()
     {
 
@@ -32,6 +36,15 @@ public class GameManganer : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        
+    }
+
+    public void startTimer()
+    {
+        levelStartTime = Time.time;
+    }
     public void Death()
     {
         sceneOfDeath = SceneManager.GetActiveScene().buildIndex;
@@ -99,7 +112,7 @@ public class GameManganer : MonoBehaviour
         else{
                 Debug.LogWarning("et eller andet er galt");
             }
-        
+        levelEndTime = Time.realtimeSinceStartupAsDouble;
     }
 
 }

@@ -223,6 +223,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 515388279085120625, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e9a06c457994b3d4b833935aff036668, type: 3}
+    - target: {fileID: 515388279572673994, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e9a06c457994b3d4b833935aff036668, type: 3}
     - target: {fileID: 1853317079127519031, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: m_Volume
       value: 0.3
