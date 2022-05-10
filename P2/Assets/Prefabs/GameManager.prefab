@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9071597736781253887}
   - component: {fileID: 9071597736781253886}
+  - component: {fileID: 5323399469906333269}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,6 +47,22 @@ MonoBehaviour:
   gameManagerPrefab: {fileID: 9071597736781253885}
   sceneManganer: {fileID: 0}
   sceneOfDeath: 0
-  shake: 1
   swipe: 1
   player: {fileID: 0}
+  disableUAP: 0
+  accessibilityManager: {fileID: 0}
+  deathCount: 0
+  levelStartTime: 0
+  levelEndTime: 0
+--- !u!114 &5323399469906333269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071597736781253885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18f5964466d93145af10046917b7a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

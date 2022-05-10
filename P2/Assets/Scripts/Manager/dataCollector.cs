@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class dataCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    string filePath = "";
+    string[] headers;
+    void dataCollect() {
+        string user = "";
+        string level = "";
+        int deaths = 0;
+        int inputs = 0;
+        int hitwall = 0;
+        double time = caculateTime();
+        string row = user + "," + level + "," +inputs+","+hitwall+","+time;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    double caculateTime() {
+        double start = GameManganer.Instance.levelStartTime;
+        double end = GameManganer.Instance.levelEndTime;
+        double time = Mathf.Abs((float)(end- start));
+        GameManganer.Instance.levelStartTime = end;
+        return 0;
+    }
+
+    void writeCSV(string row) {
+    
+    }
+
+    void writeCSVLine(string row) {
+    
     }
 }

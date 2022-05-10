@@ -17,9 +17,9 @@ public class GameManganer : MonoBehaviour
     public UAP_AccessibilityManager accessibilityManager;
     public int deathCount;
     [SerializeField]
-    double levelStartTime = 0;
+    public double levelStartTime = 0;
     [SerializeField]
-    double levelEndTime = 0;
+    public double levelEndTime = 0;
     private void Awake()
     {
 
