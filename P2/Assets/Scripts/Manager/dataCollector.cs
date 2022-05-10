@@ -20,7 +20,7 @@ public class dataCollector : MonoBehaviour
         int inputs = GameManganer.Instance.player.inputCount;
         int hitwall = GameManganer.Instance.player.wallCollisionCount;
         double time = caculateTime();
-        string row = user + "," + level + "," +inputs+","+hitwall+","+time;
+        string row = user + "," + level + "," +deaths+ "," +inputs+","+hitwall+","+time;
         Debug.Log(row);
         writeCSV(row);
     }
@@ -30,7 +30,7 @@ public class dataCollector : MonoBehaviour
         double end = GameManganer.Instance.levelEndTime;
         double time = Mathf.Abs((float)(end- start));
         GameManganer.Instance.levelStartTime = end;
-        return 0;
+        return time;
     }
 
     void writeCSV(string row) {

@@ -1,4 +1,5 @@
 User,Level,Deaths,Inputs,Hitwall,Time
-testUser,Level1,6,0,0
-testUser,Level2,0,0,0
-testUser,Level3,0,0,0
+testUser,Level1,0,28,1,0
+testUser,Level2,0,29,0,34,9071769714355
+testUser,Level3,0,58,3,24,7562084197998
+testUser,Level1,0,1,0,0
