@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Debug stuff")]
     public Text debugDisplay;
     public int wallCollisionCount;
+    public int swipesCount;
 
 
 
@@ -184,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
         else if (!isMoving)
         {
             SoundManager.instance.playEffect(gameObject, hitWall);
+            wallCollisionCount++;
         }
     }
 

@@ -99,8 +99,5 @@ public class GameManganer : MonoBehaviour
             }
         
     }
-    public void CSVWriter()
-    {
 
-    }
 }
