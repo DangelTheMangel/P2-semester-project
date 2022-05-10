@@ -6,7 +6,7 @@ making it playable by blind players. You control a character in a tile-based dun
 to get to the end of the dungeon without getting hit by an obstacle. The game is controlled by swiping
 the screen and occasionally shaking the device.
 
-Unity was used to make the game, as it was a reqiremet for our university project to make an application
+Unity was used to make the game, as it was a requirement for our university project to make an application
 for android using unity. We used UAP Accessibility Manager to include more accesibility features in the
 game, such as text to speech functionality for menus. We also Steam Audio for more realistic 3D audio.
 
