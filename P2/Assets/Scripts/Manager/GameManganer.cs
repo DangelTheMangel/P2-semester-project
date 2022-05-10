@@ -104,7 +104,8 @@ public class GameManganer : MonoBehaviour
     }
 
     public void winGame() {
-        Debug.Log("game won ");
+        Debug.Log("game won "); 
+        levelEndTime = Time.realtimeSinceStartupAsDouble;
         if (sceneManganer == null) { 
             sceneManganer = FindObjectOfType<SceneManganer>();
         }
@@ -114,7 +115,7 @@ public class GameManganer : MonoBehaviour
         else{
                 Debug.LogWarning("et eller andet er galt");
             }
-        levelEndTime = Time.realtimeSinceStartupAsDouble;
+       
     }
 
 

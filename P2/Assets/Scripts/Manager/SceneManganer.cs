@@ -11,33 +11,9 @@ public class SceneManganer : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
 
-    public void LoadLevel(string sceneIndex)
-    {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-        DontDestroyOnLoad(gameObject);
-    }
-
-    IEnumerator LoadAsynchronously(string sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-
-            slider.value = progress;
-
-            yield return null;
-        }
-    }
     public List<string> sceneName = new List<string>();
 
-    internal static void LoadSceneAsync(int sceneIndex)
-    {
-        throw new NotImplementedException();
-    }
+
 
     public int levelIndex = 0;
     public static SceneManganer instance;
@@ -84,10 +60,28 @@ public class SceneManganer : MonoBehaviour
     public void loadScene(int sceneId) {
         SceneManager.LoadScene(sceneName[sceneId], LoadSceneMode.Single);
     }
-
-    public void loadScene(string sceneName)
+    public void LoadLevel(string sceneIndex)
     {
-        StartCoroutine(LoadAsynchronously(sceneName));
+        Debug.Log("level: " + sceneIndex);
+        GameManganer.Instance.levelStartTime = Time.realtimeSinceStartupAsDouble;
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+
+    IEnumerator LoadAsynchronously(string sceneIndex)
+    {
+        Debug.Log("level: " + sceneIndex);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            Debug.Log("progress: " + progress);
+            slider.value = progress;
+
+            yield return null;
+        }
     }
 
 
