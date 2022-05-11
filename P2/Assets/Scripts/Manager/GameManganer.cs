@@ -103,7 +103,7 @@ public class GameManganer : MonoBehaviour
         if (accessibilityManager != null )
         {
             disableUAP = false;
-            accessibilityManager.m_HandleMagicGestures = false;
+            accessibilityManager.m_HandleUI = true;
         }
     }
 
@@ -112,7 +112,7 @@ public class GameManganer : MonoBehaviour
         if (accessibilityManager != null)
         {
             disableUAP = true;
-            accessibilityManager.m_HandleMagicGestures = true;
+            accessibilityManager.m_HandleUI = false;
         }
     }
 
