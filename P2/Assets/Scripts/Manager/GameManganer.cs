@@ -23,7 +23,7 @@ public class GameManganer : MonoBehaviour
     public double levelEndTime = 0;
     public string nameUser = "testUser";
     public dataCollector dataCollector;
-
+    public bool pausemenuOn = false;
     public InputField userName;
     private void Awake()
     {
@@ -74,7 +74,6 @@ public class GameManganer : MonoBehaviour
         
         if (accessibilityManager != null && SceneManager.GetActiveScene().name != "GameOver" && SceneManager.GetActiveScene().buildIndex != 0)
         {
-            Debug.Log("AccessibilityManager: " + accessibilityManager + " Object: " + accessibilityManager.gameObject.name + " parent: " + accessibilityManager.gameObject.transform.parent.name);
             accessibilityManager.enabled = false;
         }
     }
@@ -89,7 +88,7 @@ public class GameManganer : MonoBehaviour
         {
             disableIfNotMenu();
         }
-        else if (SceneManager.GetActiveScene().name != "GameOver" && SceneManager.GetActiveScene().buildIndex != 0 && !disableUAP) {
+        else if (SceneManager.GetActiveScene().name != "GameOver" && SceneManager.GetActiveScene().buildIndex != 0 && !disableUAP && !pausemenuOn) {
             Debug.Log("disable UAP");
             disableUAPObj();
         } else if ((SceneManager.GetActiveScene().name == "GameOver" || SceneManager.GetActiveScene().buildIndex == 0 )&& disableUAP) {
@@ -102,6 +101,7 @@ public class GameManganer : MonoBehaviour
     {
         if (accessibilityManager != null )
         {
+            Debug.Log("#¤%");
             disableUAP = false;
             accessibilityManager.m_HandleUI = true;
         }
