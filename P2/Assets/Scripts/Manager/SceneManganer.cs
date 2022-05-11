@@ -40,17 +40,20 @@ public class SceneManganer : MonoBehaviour
         
     }
 
-    public void loadNextLevel() {
-    
+    public void loadNextLevel() 
+    {
         GameManganer.Instance.dataCollector.dataCollect();
         if (levelIndex + plus< sceneName.Count)
         {
-            
+            //UAP_AccessibilityManager.PauseAccessibility(true, false);
+            //GameManganer.Instance.accessibilityManager.m_HandleUI = false;
             Debug.Log(levelIndex);
             levelIndex += 1;
             SceneManager.LoadScene(sceneName[levelIndex], LoadSceneMode.Single);
         }
         else {
+            //UAP_AccessibilityManager.PauseAccessibility(false, false);
+            //GameManganer.Instance.accessibilityManager.m_HandleUI = true;
             Debug.LogWarning("no more level");
             SceneManager.LoadScene("MainMenu");
             levelIndex = 0;
