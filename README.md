@@ -1,5 +1,5 @@
 # P2-semester-project
-University Project 2: Game for blind players.
+University semester Project 2: Game for blind players.
 
 This is a mobile video game in the dungeon crawler genre. Everything in the game has sound cues
 making it playable by blind players. You control a character in a tile-based dungeon, your goal is
@@ -16,14 +16,13 @@ bounce of of them realistically. The game had a lot of planned features that did
 including combat and lockpicking. These features were not implemented because of time restrictions.
 
 
-This program can be run by downloading it, opening up Unity Hub and adding the folder as a project.
-To run it optimally, you will need the following version of unity: 2020.3.30f1
-Android Build Support is also required to play the game on a mobile device.
-Can be played directly in the unity editor or with a build. Do note however that there is no quit option 
+This project can be opened by downloading [the latest release](https://github.com/DangelTheMangel/P2-semester-project/releases/latest), opening up Unity Hub and adding the folder as a project.
+To run it optimally, you will need unity version: 2020.3.30f1
+The game can be played directly in the unity editor or with a build. Do note however that there is no quit option 
 while playing a level in a PC build.
 
 
-How to play:
+## How to play:
 PC: 
 Single click an option in the menu to read it
 Double click an option to select it
@@ -43,15 +42,12 @@ and exit through a door. Stepping on a trap fires an arrow towards you, which yo
 Some levels have enemies that walk arround and must not be touched.
 
 
-People who worked on this:
+## People who worked on this:
 
-Alba O. V. Simonsen
-Casper Agerskov
-Christian Peter Rosenberg Randleff
-Jacob Almdal Jensen
-Lucas Friborg Mitchell
-Lykke Legendre Dahl
-Maria Barbro Lanther
-
-
-
+- Alba O. V. Simonsen
+- Casper Agerskov
+- Christian Peter Rosenberg Randleff
+- Jacob Almdal Jensen
+- Lucas Friborg Mitchell
+- Lykke Legendre Dahl
+- Maria Barbro Lanther
