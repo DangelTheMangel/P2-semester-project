@@ -21,6 +21,7 @@ public class dataCollector : MonoBehaviour
         int hitwall = GameManganer.Instance.player.wallCollisionCount;
         double time = caculateTime();
         string row = user + "," + level + "," +deaths+ "," +inputs+","+hitwall+","+time;
+        GameManganer.Instance.deathCount = 0;
         Debug.Log(row);
         writeCSV(row);
     }
