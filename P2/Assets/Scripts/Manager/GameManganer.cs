@@ -98,7 +98,7 @@ public class GameManganer : MonoBehaviour
         }
     }
 
-    private void aktivateUAPObj()
+    public void aktivateUAPObj()
     {
         if (accessibilityManager != null )
         {
@@ -107,7 +107,7 @@ public class GameManganer : MonoBehaviour
         }
     }
 
-    private void disableUAPObj()
+    public void disableUAPObj()
     {
         if (accessibilityManager != null)
         {

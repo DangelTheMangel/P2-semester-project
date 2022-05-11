@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
 
     {
+        GameManganer.Instance.aktivateUAPObj();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         PausedGame = true;
@@ -68,6 +69,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
 
     {
+        GameManganer.Instance.disableUAPObj();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         PausedGame = false;
