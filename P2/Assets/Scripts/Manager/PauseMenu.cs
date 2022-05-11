@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 
 {
   PauseAction action;
+
   public static bool PausedGame = false;
   public GameObject pauseMenuUI; 
   
@@ -47,8 +48,8 @@ public class PauseMenu : MonoBehaviour
         }
      
 
-
-     //when Paused is clicked(escape) The Pause UI shows and the Sounds is muted
+      //Written with help from https://www.youtube.com/watch?v=JivuXdrIHK0&t=482s
+     //when Paused is clicked(escape) The Pause UI shows, the Sounds is muted and time stops
  public void Pause()
 
  {
@@ -59,7 +60,7 @@ public class PauseMenu : MonoBehaviour
    
  }
 
-       //When resume is clicked the time go back to normal and the sound starts again
+       //When resume is clicked the time go back to normal and the sound and time starts again
    public void Resume()
 
     {
@@ -67,6 +68,7 @@ public class PauseMenu : MonoBehaviour
  Time.timeScale = 1f;
  PausedGame = false ;
  AudioListener.pause = false;
+ 
  
 
     }
