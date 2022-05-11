@@ -74,14 +74,15 @@ public class SceneManganer : MonoBehaviour
     {
         Debug.Log("level: " + sceneIndex);
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-
+        if(loadingScreen != null)
         loadingScreen.SetActive(true);
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
             Debug.Log("progress: " + progress);
-            slider.value = progress;
+            if (slider != null)
+                slider.value = progress;
 
             yield return null;
         }

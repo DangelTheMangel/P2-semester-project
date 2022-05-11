@@ -13,24 +13,12 @@ public class ControlsEnabler : MonoBehaviour
     [SerializeField]
     GameObject GameManagerPrefab;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        shakeOn = GameManagerPrefab.GetComponent<GameManganer>().swipe;
-        if (shakeOn)
-        {
-            shakeOn = false;
-            turnOff();
-            buttonTextObj.text = buttonText[1];
-
-        }
-        else
-        {
-            shakeOn = true;
-            turnOn();
-            buttonTextObj.text = buttonText[0];
-        }
-        Debug.LogWarning("shakeOn:" + shakeOn);
+    
+        
     }
 
 
