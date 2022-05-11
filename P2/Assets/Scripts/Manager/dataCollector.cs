@@ -11,7 +11,7 @@ public class dataCollector : MonoBehaviour
 
     private void Start()
     {
-        filePath = Application.dataPath + filePath;
+        filePath = Application.persistentDataPath + filePath;
     }
     public void dataCollect() {
         string user = GameManganer.Instance.nameUser;

@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Debug stuff")]
     public Text debugDisplay;
+    public bool logSwipeDetect;
     public int wallCollisionCount;
     public int inputCount;
 
@@ -92,8 +93,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void detectSwipe()
     {
-        Debug.LogWarning("detectSwipe " + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
-            (endTime - startTime) <= maximumDistance) + " swipe on: " + GameManganer.Instance.swipe);
+        if (logSwipeDetect == true)
+        {
+            Debug.LogWarning("detectSwipe " + (Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
+                        (endTime - startTime) <= maximumDistance) + " swipe on: " + GameManganer.Instance.swipe);
+        }
+        
         if (GameManganer.Instance.swipe && Vector3.Distance(startPosition, endPosition) >= minumumDistance &&
             (endTime - startTime) <= maximumDistance)
         {
@@ -181,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
             SoundManager.instance.playEffect(gameObject, footStep);
             PAC.MovementCheck();
             isMoving = true;
-            Debug.Log(isMoving);
+            //Debug.Log(isMoving);
         }
         else if (!isMoving)
         {
@@ -201,7 +206,6 @@ public class PlayerMovement : MonoBehaviour
         {
             PAC.MovementCheck();
             isMoving = false;
-            Debug.Log(isMoving);
         }
         if (!GameManganer.Instance.swipe) {
             detectTilde();
