@@ -19,11 +19,13 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        UAP_AccessibilityManager.RegisterOnPauseToggledCallback(Pause);
         action.Enable();
     }
 
     private void OnDisable()
     {
+        UAP_AccessibilityManager.UnregisterOnPauseToggledCallback(Resume);
         action.Disable();
     }
 
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         //Checks if the game is paused or not
         action.Pause.PauseGame.performed += _ => DeterminePause();
     }
+
 
     private void DeterminePause()
     {
