@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/UnsampledScene.unity
     guid: 2c45e8db035346e4e92b269ea8d86966
+  - enabled: 1
+    path: Assets/Scenes/menu/PauseMenu.unity
+    guid: 296e3171345e5d74aac11564755bf022
   m_configObjects: {}
