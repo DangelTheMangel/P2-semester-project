@@ -52,5 +52,5 @@ MonoBehaviour:
   arrowpointName: ArrowPoint
   isRandom: 1
   maxTime: 4
-  minTime: 1
+  minTime: 1.5
   roationdifferents: 0.3
