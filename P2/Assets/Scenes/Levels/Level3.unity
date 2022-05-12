@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5323399469906333269, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
+      propertyPath: filePath
+      value: \data.csv
+      objectReference: {fileID: 0}
     - target: {fileID: 9071597736781253885, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -3943,9 +3947,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bcc10505893124d8c5adcd437348ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
+  slider: {fileID: 0}
   sceneName:
   - Test level 2
   levelIndex: 0
+  plus: 1
   changeScene: 0
 --- !u!4 &1741594930
 Transform:
