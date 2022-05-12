@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     [SerializeField] private GameObject preSFX;
     [SerializeField] private AudioSoundClip[] SoundArray;
+    [SerializeField] private bool toggle;
     
     [SerializeField] private VoiceLines[] VoiceArray;
     [SerializeField] private GameObject VoiceStart;

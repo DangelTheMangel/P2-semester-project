@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3519422766893181468, guid: c30108c2bde8cde4891da046f8a74893, type: 3}
+      propertyPath: toggle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3519422766893181469, guid: c30108c2bde8cde4891da046f8a74893, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -2535,38 +2539,6 @@ CompositeCollider2D:
         Y: 20000041
       - X: 9999900
         Y: -19999900
-    - - X: 110000100
-        Y: -41
-      - X: 110000100
-        Y: 10000041
-      - X: 110000041
-        Y: 10000100
-      - X: 99999959
-        Y: 10000100
-      - X: 99999900
-        Y: 10000041
-      - X: 99999900
-        Y: -41
-      - X: 99999959
-        Y: -100
-      - X: 110000041
-        Y: -100
-    - - X: 160000100
-        Y: -20000041
-      - X: 160000100
-        Y: -9999959
-      - X: 160000041
-        Y: -9999900
-      - X: 89999959
-        Y: -9999900
-      - X: 89999900
-        Y: -9999959
-      - X: 89999900
-        Y: -20000041
-      - X: 89999959
-        Y: -20000100
-      - X: 160000041
-        Y: -20000100
   m_CompositePaths:
     m_Paths:
     - - {x: 1.9999748, y: -3.00001}
@@ -2593,14 +2565,6 @@ CompositeCollider2D:
       - {x: 3.99999, y: 4.9999747}
       - {x: 3.999961, y: 2.00001}
       - {x: 0.99999, y: 1.9999748}
-    - - {x: 10.999974, y: -0.00001}
-      - {x: 10.999974, y: 1.00001}
-      - {x: 9.99999, y: 0.9999748}
-      - {x: 10.000026, y: -0.00001}
-    - - {x: 15.999974, y: -2.00001}
-      - {x: 15.999974, y: -0.99999}
-      - {x: 8.99999, y: -1.0000252}
-      - {x: 9.000026, y: -2.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &2047657935
@@ -2747,76 +2711,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 0
       dummyAlignment: 0
       m_AllTileFlags: 2147483650
-  - first: {x: 9, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 10, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 11, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 12, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 13, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 14, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 15, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
   - first: {x: -1, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -2848,16 +2742,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 2147483650
   - first: {x: 1, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 2147483650
-  - first: {x: 10, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 8
@@ -3195,7 +3079,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 48
+  - m_RefCount: 40
     m_Data: {fileID: 11400000, guid: e466a8118e8b89b4395c8f112a1aab43, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -3228,10 +3112,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 48
+  - m_RefCount: 40
     m_Data: {fileID: 21300000, guid: 9a63a21db8cb4774fb4ba3458a813541, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 48
+  - m_RefCount: 40
     m_Data:
       e00: 1
       e01: 0
@@ -3322,15 +3206,15 @@ Tilemap:
       e32: 0
       e33: 8.4e-43
   m_TileColorArray:
-  - m_RefCount: 48
+  - m_RefCount: 40
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
-  - m_RefCount: 48
+  - m_RefCount: 40
     m_Data: {fileID: 1387051385622389090, guid: e55b47e5be02d104aa9076cf8bc831c7, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -14, y: -3, z: 0}
-  m_Size: {x: 36, y: 21, z: 1}
+  m_Origin: {x: -14, y: -9, z: 0}
+  m_Size: {x: 36, y: 27, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -3560,6 +3444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 515388278999643901, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 515388279085120625, guid: 1eea048d1ff31164fa9e1eace1a6e3e3, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -3626,6 +3514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1167995424880748248, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: occlusion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167995424880748249, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: mProbeBatchesUsed.Array.data[0]
       value: 
@@ -3642,6 +3534,10 @@ PrefabInstance:
       propertyPath: mProbeBatchesUsed.Array.data[1]
       value: 
       objectReference: {fileID: 1307669969}
+    - target: {fileID: 1167995425306899687, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: occlusion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167995425433636083, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: mProbeBatchesUsed.Array.data[0]
       value: 
@@ -3650,6 +3546,10 @@ PrefabInstance:
       propertyPath: mProbeBatchesUsed.Array.data[1]
       value: 
       objectReference: {fileID: 1307669969}
+    - target: {fileID: 1167995425433636085, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
+      propertyPath: occlusion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167995425729592996, guid: 3e7b826225b5bc040893ec83c3ecf595, type: 3}
       propertyPath: m_Name
       value: Waypoint audio
@@ -3889,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404645834404970400, guid: 29704d2ae179b7946a969600660229e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404645834404970405, guid: 29704d2ae179b7946a969600660229e5, type: 3}
       propertyPath: m_RootOrder
