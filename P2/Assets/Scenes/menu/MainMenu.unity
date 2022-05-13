@@ -1113,6 +1113,10 @@ PrefabInstance:
       propertyPath: swipe
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9071597736781253886, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
+      propertyPath: sceneManganer
+      value: 
+      objectReference: {fileID: 1562950805}
     - target: {fileID: 9071597736781253887, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1245,10 +1249,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562950805}
-        m_TargetAssemblyTypeName: SceneManganer, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 5
+      - m_Target: {fileID: 1588696219}
+        m_TargetAssemblyTypeName: startGame, Assembly-CSharp
+        m_MethodName: startTheGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2448,6 +2452,7 @@ GameObject:
   - component: {fileID: 1588696215}
   - component: {fileID: 1588696214}
   - component: {fileID: 1588696218}
+  - component: {fileID: 1588696219}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -2565,6 +2570,19 @@ MonoBehaviour:
   m_ConstrainToContainerRight: 0
   m_AllowTouchExplore: 1
   m_DoubleCheckUIElementsPositions: 1
+--- !u!114 &1588696219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588696213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902a86855ffbc4d4c8c722e773658488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: Level1
 --- !u!114 &1709829925 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9071597736781253886, guid: b852b902ce49dcb4f99238af042c1c96, type: 3}
