@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Part of this script has been enspired by brakyes: https://www.youtube.com/watch?v=YMj2qPq9CP8
+
 public class SceneManganer : MonoBehaviour
 
 {
