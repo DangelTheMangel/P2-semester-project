@@ -64,7 +64,8 @@ public class GameManganer : MonoBehaviour
     {
         //the death sound is played through the Soundmanager
         SoundManager.instance.playEffect(GameManganer.Instance.player.gameObject, "ArrowHit");
-        //the current level that the player has reached is saved as the "sceneOfDeath" int, so that the player can return to the same level after a game over
+        //the current level that the player has reached is saved as the "sceneOfDeath" int,
+        //so that the player can return to the same level after a game over
         sceneOfDeath = SceneManager.GetActiveScene().buildIndex;
         //the game over scene is loaded
         SceneManager.LoadScene("GameOver");
