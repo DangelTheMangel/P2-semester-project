@@ -18,7 +18,7 @@ public class ArrowEvent : Event
     private PlayerControls playerControls;
     //whether the arrow speed is randomized
     public bool isRandom = false;
-    //max and min ammounts it can take when randomized
+    //max and min ammounts it can take for the arrow to reach the player when randomized
     public float maxTime;
     public float minTime;
 
@@ -32,8 +32,10 @@ public class ArrowEvent : Event
     float shakeDetectionThreshold = 2.0f;
     private void Start()
     {
+        //checks if the arrows are set to be randomized
         if (isRandom)
         {
+            //picks a random number between minTime and maxTime
             reactionTimer = Random.Range(minTime, maxTime);
         }
 
@@ -106,9 +108,9 @@ public class ArrowEvent : Event
     public override void faildReaction()
     {
         Debug.LogWarning("du blev ramt");
-        SoundManager.instance.playEffect(GameManganer.Instance.player.gameObject, "ArrowHit");
         Destroy(arrowObject);
         Destroy(gameObject);
+        //communicates with the GameManager to start the Death function.
         GameManganer.Instance.Death();
     }
 

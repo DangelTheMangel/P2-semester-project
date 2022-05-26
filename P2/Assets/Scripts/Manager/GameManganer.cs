@@ -62,9 +62,13 @@ public class GameManganer : MonoBehaviour
     }
     public void Death()
     {
+        //the death sound is played through the Soundmanager
+        SoundManager.instance.playEffect(GameManganer.Instance.player.gameObject, "ArrowHit");
+        //the current level that the player has reached is saved as the "sceneOfDeath" int, so that the player can return to the same level after a game over
         sceneOfDeath = SceneManager.GetActiveScene().buildIndex;
+        //the game over scene is loaded
         SceneManager.LoadScene("GameOver");
-        Debug.Log("Get Owned Loser");
+        //the "deathcount" int is increased, this is for testing, to know how many times a test participant has lost.
         deathCount++;
     }
 
@@ -79,6 +83,10 @@ public class GameManganer : MonoBehaviour
     }
     private void Update()
     {
+        //A "Playermovement" script is needed for the script to work when in a level. The game manager is not destroyed on load,
+        //so changing scenes, like when getting a game over, will leave the gamemanager without a playermovement script.
+        //This if-statement ensures that a playermovement script is searched for when it is missing.
+        //It does not search when on the menu or game over screen 
         if (player == null && SceneManager.GetActiveScene().name != "GameOver" && SceneManager.GetActiveScene().buildIndex != 0)
         {
             player = FindObjectOfType<PlayerMovement>();

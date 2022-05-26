@@ -185,7 +185,7 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 2fd8f9aaa5dae4b4f8f71fbc4d8493dd, type: 3}
     mixerGroup: {fileID: -1878824915107977321, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: ArrowHit
-    audio: {fileID: 8300000, guid: 6d36250e95956064485007b5bbab3dbd, type: 3}
+    audio: {fileID: 8300000, guid: 567fbb66771f0004ca34a8901e972094, type: 3}
     mixerGroup: {fileID: -1768017560437573207, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
   - sound_name: ArrowBlocked
     audio: {fileID: 8300000, guid: c532eb59e56bfed42a917837f7aad1a5, type: 3}
