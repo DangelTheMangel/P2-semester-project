@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovesToPlayerButDoesNotRotate : MonoBehaviour
 {
     GameObject Gamer;
-    Vector3 offset = new Vector3(0, 0, -10);;
+    Vector3 offset = new Vector3(0, 0, -10);
 
     // Start is called before the first frame update
     void Start()
