@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraBullshit : MonoBehaviour
+public class cameraAdjustingSize : MonoBehaviour
 {
     //script credit: gamedesigntheory blogspot
     void Start()
