@@ -181,30 +181,39 @@ MonoBehaviour:
   - sound_name: Footstep
     audio: {fileID: 8300000, guid: d6d7a4761c6c4a74382952b87a56afdb, type: 3}
     mixerGroup: {fileID: 7341604330998150755, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: TurnSound
     audio: {fileID: 8300000, guid: 2fd8f9aaa5dae4b4f8f71fbc4d8493dd, type: 3}
     mixerGroup: {fileID: -1878824915107977321, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: ArrowHit
     audio: {fileID: 8300000, guid: 567fbb66771f0004ca34a8901e972094, type: 3}
     mixerGroup: {fileID: -1768017560437573207, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: ArrowBlocked
     audio: {fileID: 8300000, guid: c532eb59e56bfed42a917837f7aad1a5, type: 3}
     mixerGroup: {fileID: -6936575854869814231, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: TrapAct
     audio: {fileID: 8300000, guid: 2598de96cb50cca44a0a73a38d4952b8, type: 3}
     mixerGroup: {fileID: -7412148978543054888, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: HitWall
     audio: {fileID: 8300000, guid: cb817f7a3f551a246a84f4f9982b90e7, type: 3}
     mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: DialogueOn
     audio: {fileID: 8300000, guid: 46f796953099e7143800e8e271172440, type: 3}
     mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: DialogueOff
     audio: {fileID: 8300000, guid: 23af585f014dae7489f4926f454ce4d1, type: 3}
     mixerGroup: {fileID: 8067123912630455039, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   - sound_name: Door
     audio: {fileID: 8300000, guid: cfba8b5b25ff71a4e90f2e84d2517e64, type: 3}
     mixerGroup: {fileID: 732990899900060950, guid: 468141ab8f51bb14182fcc7e4536b75d, type: 2}
+    toggle: 0
   VoiceArray: []
   VoiceStart: {fileID: 0}
 --- !u!1 &3519422767487308108

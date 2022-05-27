@@ -17,10 +17,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource musicSource, effectSource, voiceSource;
     [SerializeField] private GameObject preSFX;
     [SerializeField] private AudioSoundClip[] SoundArray;
-    [SerializeField] private bool toggle;
     
     [SerializeField] private VoiceLines[] VoiceArray;
     [SerializeField] private GameObject VoiceStart;
+
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -49,10 +49,12 @@ public class SoundManager : MonoBehaviour
     {
         GameObject obj = Instantiate(preSFX, target.transform.position, target.transform.rotation, target.transform);
 
-        obj.GetComponent<playSFX>()._clip = findSound(soundName).audio;
-
-        obj.GetComponent<playSFX>().MyMixerGroup = findSound(soundName).mixerGroup;
-        obj.GetComponent<playSFX>().PlayAudio();
+        AudioSoundClip aSC = findSound(soundName);
+        playSFX sFX = obj.GetComponent<playSFX>();
+        sFX._clip = aSC.audio;
+        sFX.toggle = aSC.toggle;
+        sFX.MyMixerGroup = aSC.mixerGroup;
+        sFX.PlayAudio();
     }
 
     public void InstantiateVoice(AudioClip vclip)
@@ -66,11 +68,6 @@ public class SoundManager : MonoBehaviour
 
         voi.GetComponent<PlayVoice>()._voices = findSound(VoiceName).audio;
         
-    }
-
-    public void changeMasterVolume(float value)
-    {
-        AudioListener.volume = value;
     }
 
     public AudioSoundClip findSound(string audioName)
@@ -103,6 +100,7 @@ public class AudioSoundClip
     public string sound_name;
     public AudioClip audio;
     public AudioMixerGroup mixerGroup;
+    public bool toggle;
 }
 
 [Serializable]
