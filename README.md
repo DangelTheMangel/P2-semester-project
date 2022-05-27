@@ -33,9 +33,18 @@ F to Block Arrows
 Android:
 Tap a menu option to read it out loud
 Double tap the option to select it
+
+Controls are different depending on whether "Swipe movement" or "Tilted movement"  is selected on the menu. A better name for "Tilted movement" would be "Motion Gestures"
+
+Swipe:
 Swipe up to move forward
 Swipe left or right to turn 90 degrees left or right respectively
 Shake the device to block arrows
+
+Motion Gestures:
+Tilt device downwards to move forward.
+Tilt device left or right to turn 90 degrees left or right respectively.
+Shake the device to block arrows.
 
 In the game you will be traversing three levels of a dungeon. The goal is to get to the end
 and exit through a door. Stepping on a trap fires an arrow towards you, which you must block.
