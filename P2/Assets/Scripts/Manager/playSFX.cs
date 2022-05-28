@@ -8,13 +8,22 @@ public class playSFX : MonoBehaviour
     [SerializeField] public AudioClip _clip;
     AudioSource audioSource;
     public AudioMixerGroup MyMixerGroup;
+    public bool toggle;
+
     public void PlayAudio()
     {
-        SoundManager.instance.playEffect(_clip);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = _clip;
         audioSource.outputAudioMixerGroup = MyMixerGroup;
-        audioSource.Play();
+        audioSource.mute = toggle;
+        if(!toggle)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void LateUpdate()
