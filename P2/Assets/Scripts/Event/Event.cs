@@ -23,7 +23,12 @@ public class Event : MonoBehaviour
     {
         reaction();
     }
-
+    /// <summary>
+    /// This function is the reaction. 
+    /// If it isnt overrident it checks if the reaction 
+    /// time has run out and if it hasnt then it check  if the user have completede the tastk.
+    /// If the time has run out the player will faild the reaction
+    /// </summary>
     public virtual void reaction()
     {
         if (!timedReaction||reactionTimer > 0) //Det her tjekker om reaction timen er over 0.

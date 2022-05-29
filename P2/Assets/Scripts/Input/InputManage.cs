@@ -24,7 +24,6 @@ public class InputManage : MonoBehaviour
     public Gyroscope gyroscope;
     public bool gyroEnable = false;
     private PlayerController playerController;
-    private Quaternion startPostion;
 
     [Header("accelerometer")]
     float accelerometerUpdateInterval = 1.0f / 60.0f;
@@ -49,7 +48,9 @@ public class InputManage : MonoBehaviour
 
     public bool mOverm = true;
 
-
+    /// <summary>
+    /// When the object awake it make the inputmanager a singelton
+    /// </summary>
     private void Awake()
     {
         if (instance == null)
@@ -69,15 +70,17 @@ public class InputManage : MonoBehaviour
         playerController = new PlayerController();
 
     }
-
-
-
+    /// <summary>
+    /// ebable the playercontroller whe nthis is enavblede
+    /// </summary>
     private void OnEnable()
     {
         if (playerController != null)
             playerController.Enable();
     }
-
+    /// <summary>
+    /// Disable the player controller when this is diable
+    /// </summary>
     private void OnDisable()
     {
         if (playerController != null)
@@ -86,26 +89,43 @@ public class InputManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //make it so the when the player touch the screen the right function starts
         playerController.Touch.PrimaryContact.started += ctx => startTouchPrimary(ctx);
         playerController.Touch.PrimaryContact.canceled += ctx => endTouchPrimary(ctx);
-        //
+        //calculate the lowPassFilterFactor
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
-
+        //sets the gyro to the gyroscope.attitude
         Quaternion gyro = gyroscope.attitude;
-        startPostion = new Quaternion(gyro.x, gyro.y, gyro.z, gyro.w);
     }
 
+    /// <summary>
+    /// Return the lowpass filter factor so it can be used to decet a shake
+    /// Inspred from: https://stackoverflow.com/questions/31389598/how-can-i-detect-a-shake-motion-on-a-mobile-device-using-unity3d-c-sharp
+    /// </summary>
+    /// <returns></returns>
     public float getLowPassFilterFactor() {
         return lowPassFilterFactor;
     }
+    /// <summary>
+    /// return the phones acceleration
+    /// </summary>
+    /// <returns></returns>
     public Vector3 getAccelerometerVector() {
         return Input.acceleration;
     }
-
+    /// <summary>
+    /// retun the phones rotation
+    /// </summary>
+    /// <returns></returns>
     public Quaternion getPhoneRotation()
     {
         return gyroscope.attitude;
     }
+    /// <summary>
+    /// This is run when the first touch on the screen end.and then calls the players movent function
+    /// Inspred from: https://www.youtube.com/watch?v=XUx_QlJpd0M&t=1191s&ab_channel=samyam
+    /// </summary>
+    /// <param name="ctx"></param>
     private void endTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (onEndTouch != null)
@@ -114,29 +134,35 @@ public class InputManage : MonoBehaviour
             Debug.Log("endpos" + playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
         }
     }
-
+    /// <summary>
+    /// This is run when the first touch on the screen starts. and then calls the players movent function
+    /// Inspred from: https://www.youtube.com/watch?v=XUx_QlJpd0M&t=1191s&ab_channel=samyam
+    /// </summary>
+    /// <param name="ctx"></param>
     private void startTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (onStartTouch != null)
         {
             onStartTouch(utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>()), (float)ctx.startTime);
-            Debug.Log("startpos" + playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
         }
     }
-
+    /// <summary>
+    /// This return the fingeres postion in world spaces
+    /// Inspred from: https://www.youtube.com/watch?v=XUx_QlJpd0M&t=1191s&ab_channel=samyam
+    /// </summary>
+    /// <returns></returns>
     public Vector2 primaryPostion()
     {
         return utilities.screenToWorld(Camera.main, playerController.Touch.PrimaryPostion.ReadValue<Vector2>());
     }
-
+    /// <summary>
+    /// In Update take the mean of rotation every readDataEverFrame.
+    /// </summary>
     private void Update()
     {
         if (Time.frameCount % readDataEverFrame == 0)
         {
-            if (mOverm)
-                rotationRate = calulateRotationRateMean(rotationRateList);
-            else
-                rotationRate = rotationRateList[(int)(rotationRateList.Count-1)];
+            rotationRate = calulateRotationRateMean(rotationRateList);
             rotationRateList.Clear();
         }
         else
@@ -144,11 +170,18 @@ public class InputManage : MonoBehaviour
             rotationRateList.Add(gyroscope.rotationRateUnbiased);
         }
     }
-
+    /// <summary>
+    /// This function return the mean rotation rate to other classes
+    /// </summary>
+    /// <returns></returns>
     public Vector3 getRotationRate() {
         return rotationRate;
     }
-
+    /// <summary>
+    /// This take the list of rotationRate and find the mean rotation rate
+    /// </summary>
+    /// <param name="rotationRate"></param>
+    /// <returns></returns>
     public Vector3 calulateRotationRateMean(List<Vector3> rotationRate)
     {
         Vector3 meanVector = Vector3.zero;
@@ -159,7 +192,19 @@ public class InputManage : MonoBehaviour
         meanVector = new Vector3((float)meanVector.x / rotationRate.Count, meanVector.y / rotationRate.Count, meanVector.z / rotationRate.Count);
         return meanVector;
     }
-
+    /// <summary>
+    /// This function check if the phone rotationRateValue is greater then the biases
+    /// If it less thenthe bias it retunr 0. Then it chekc if the phone is rotatatede and it is possible to make an input
+    /// The rotationRateValue is a float and suggestede to give the rotation rate axis 
+    /// The bias is how big the roation rate should be before and input is registerede
+    /// phoneRotationAxes is the axis of the phone gyro roation
+    /// timer is the time it take before a new input can be rigetsrede
+    /// </summary>
+    /// <param name="rotationRateValue"></param>
+    /// <param name="Bias"></param>
+    /// <param name="phoneRotationAxes"></param>
+    /// <param name="timer"></param>
+    /// <returns></returns>
     public int getTiledAxis(float rotationRateValue, float Bias, float phoneRotationAxes , float timer)
     {
         if (rotationRateValue < Bias && rotationRateValue > -Bias)
