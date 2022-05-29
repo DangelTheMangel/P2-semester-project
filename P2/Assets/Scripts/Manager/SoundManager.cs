@@ -23,8 +23,9 @@ public class SoundManager : MonoBehaviour
 
     public void Awake()
     {
-        //tjekker om der er en instance og hvis der ikke er
-        //g�re denne til instance ellers �dl�g dette gameobject
+        ///<summary>
+        ///Checks if there is a SoundManager in scene, if there is and intance it destroys the old one and makes a new.
+        ///</summary>
         if (instance == null)
         {
             instance = this;
@@ -45,6 +46,11 @@ public class SoundManager : MonoBehaviour
         effectSource.PlayOneShot(clip);
     }
 
+    /// <summary>
+    /// playEffect instantiates an object that contains the audio sorce.
+    /// the correct sound is found thourgh and array and is played.
+    /// This also adds the audio toggle and the mixer to each element.
+    /// </summary>
     public void playEffect(GameObject target, string soundName)
     {
         GameObject obj = Instantiate(preSFX, target.transform.position, target.transform.rotation, target.transform);
@@ -70,6 +76,10 @@ public class SoundManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Creats and array that contais every sound source used.
+    /// Serches though the array until it finds the correct file and playes it.
+    /// </summary>
     public AudioSoundClip findSound(string audioName)
     {
         AudioSoundClip selected = null;
@@ -94,6 +104,9 @@ public class SoundManager : MonoBehaviour
 
 }
 
+    /// <summary>
+    /// Creates each of the respective element to the array in the unity editor.
+    /// </summary>
 [Serializable]
 public class AudioSoundClip
 {
