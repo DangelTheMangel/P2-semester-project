@@ -11,6 +11,10 @@ public class dataCollector : MonoBehaviour
     {
         filePath = Application.persistentDataPath + filePath;
     }
+    /// <summary>
+    /// takes input from the <see cref="GameManganer"/> and arranges it in a string.
+    /// The script is run by <see cref="SceneManganer.loadNextLevel"/> whenever a new level is loaded.
+    /// </summary>
     public void dataCollect()
     {
         string user = GameManganer.Instance.nameUser;
